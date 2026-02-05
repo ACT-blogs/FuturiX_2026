@@ -25,7 +25,7 @@ const PageLoader = () => (
 
 function App() {
   return (
-    <Router basename="/FuturiX_2026">
+    <Router basename="/Futurix_2026">
       <div className="min-h-screen bg-dark text-white">
         <Navbar />
         <main>
