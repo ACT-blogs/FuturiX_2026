@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Code2, Network, Cpu, Zap, Cog, Building2, ArrowRight } from 'lucide-react';
+import { FaBrain, FaRobot, FaLaptopCode, FaChartLine, FaArrowRight } from 'react-icons/fa';
 import { departments, getEventsByDepartment } from '../data/eventsData';
 
 const iconMap = {
-    Code2,
-    Network,
-    Cpu,
-    Zap,
-    Cog,
-    Building2,
+    FaBrain,
+    FaRobot,
+    FaLaptopCode,
+    FaChartLine,
 };
 
 const colorClasses = {
@@ -45,7 +43,7 @@ const Departments = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {departments.map((dept, index) => {
                         const Icon = iconMap[dept.icon];
                         const eventCount = getEventsByDepartment(dept.id).length;
@@ -58,7 +56,7 @@ const Departments = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 whileHover={{ scale: 1.05 }}
-                                className="card-hover group"
+                                className="card-hover group relative"
                             >
                                 {/* Icon */}
                                 <div className="mb-6">
@@ -71,7 +69,7 @@ const Departments = () => {
 
                                 {/* Content */}
                                 <div className="text-center">
-                                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-primary transition-colors leading-tight min-h-[3.5rem] flex items-center justify-center">
                                         {dept.name}
                                     </h3>
 
@@ -93,7 +91,7 @@ const Departments = () => {
                                         <span className="text-sm font-medium text-gray-300 group-hover/btn:text-white">
                                             View Events
                                         </span>
-                                        <ArrowRight className="w-4 h-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
+                                        <FaArrowRight className="w-4 h-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
 
@@ -118,7 +116,7 @@ const Departments = () => {
                         Can't decide? Explore all events
                     </h2>
                     <p className="text-gray-300 mb-6">
-                        Browse through our complete list of technical competitions, non-technical events, and workshops
+                        Browse through our complete list of technical and non-technical events
                     </p>
                     <Link to="/events" className="btn-primary">
                         View All Events

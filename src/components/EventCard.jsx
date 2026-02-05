@@ -1,85 +1,72 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { getDepartmentById, getCategoryById } from '../data/eventsData';
+import { Link } from 'react-router-dom';
+import { FaClock, FaUsers, FaArrowRight, FaTrophy, FaCode, FaMicrochip, FaLaptopCode, FaChartLine } from 'react-icons/fa';
 
-const EventCard = ({ event, index = 0 }) => {
-    const department = getDepartmentById(event.department);
-    const category = getCategoryById(event.category);
+// Map department IDs to icons
+const deptIcons = {
+    'aids': FaMicrochip,
+    'aiml': FaCode,
+    'cs': FaLaptopCode,
+    'csbs': FaChartLine
+};
 
-    const categoryColors = {
-        'technical': 'badge-primary',
-        'non-technical': 'badge-secondary',
-        'workshop': 'badge-success',
-    };
+const EventCard = ({ event, index }) => {
+    const DeptIcon = deptIcons[event.department] || FaCode;
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            whileHover={{ y: -8 }}
-            className="card-hover group h-full flex flex-col"
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group relative h-full"
         >
-            {/* Header */}
-            <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-2">
-                        {event.name}
-                    </h3>
-                    <p className="text-sm text-gray-400 line-clamp-2">
-                        {event.shortDescription}
-                    </p>
-                </div>
-                {event.prizePool && event.prizePool !== 'Certificates' && (
-                    <div className="ml-4 flex-shrink-0">
-                        <div className="flex items-center space-x-1 text-yellow-400">
-                            <Trophy className="w-5 h-5" />
-                        </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="relative h-full glass border border-white/10 hover:border-primary/50 p-6 rounded-2xl transition-all duration-300 flex flex-col">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                        <DeptIcon className="w-6 h-6 text-primary" />
                     </div>
-                )}
-            </div>
-
-            {/* Badges */}
-            <div className="flex flex-wrap gap-2 mb-4">
-                <span className="badge bg-white/5 text-white border border-white/10">
-                    {department?.name}
-                </span>
-                <span className={categoryColors[event.category]}>
-                    {category?.name}
-                </span>
-                <span className="badge bg-primary/10 text-primary border border-primary/20">
-                    {event.teamSize}
-                </span>
-            </div>
-
-            {/* Prize Pool */}
-            {event.prizePool && (
-                <div className="mb-4 glass p-3 rounded-lg">
-                    <p className="text-xs text-gray-400">Prize Pool</p>
-                    <p className="text-lg font-bold text-primary">{event.prizePool}</p>
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${event.category === 'technical'
+                            ? 'bg-primary/20 text-primary border border-primary/20'
+                            : 'bg-secondary/20 text-secondary border border-secondary/20'
+                        }`}>
+                        {event.category}
+                    </span>
                 </div>
-            )}
 
-            {/* Spacer */}
-            <div className="flex-1" />
+                {/* Content */}
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                    {event.name}
+                </h3>
 
-            {/* View Details Button */}
-            <Link
-                to={`/events/${event.id}`}
-                className="mt-4 flex items-center justify-between px-4 py-3 bg-white/5 hover:bg-white/10 
-                   border border-white/10 hover:border-primary/50 rounded-lg 
-                   transition-all duration-300 group/btn"
-            >
-                <span className="text-sm font-medium text-gray-300 group-hover/btn:text-white">
-                    View Details
-                </span>
-                <ArrowRight className="w-4 h-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
+                <p className="text-gray-400 text-sm mb-6 flex-grow line-clamp-3">
+                    {event.shortDescription}
+                </p>
 
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl blur-xl" />
+                {/* Details */}
+                <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-500">
+                        <FaUsers className="w-4 h-4 mr-2 text-gray-400" />
+                        <span>{event.teamSize}</span>
+                    </div>
+                    {event.prizePool && (
+                        <div className="flex items-center text-sm text-gray-500">
+                            <FaTrophy className="w-4 h-4 mr-2 text-yellow-500" />
+                            <span className="text-yellow-500/90 font-medium">{event.prizePool}</span>
+                        </div>
+                    )}
+                </div>
+
+                {/* Actions */}
+                <Link
+                    to={`/events/${event.id}`}
+                    className="flex items-center justify-center w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium transition-all group/btn border border-white/5 hover:border-primary/30"
+                >
+                    <span>View Details</span>
+                    <FaArrowRight className="ml-2 w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
             </div>
         </motion.div>
     );

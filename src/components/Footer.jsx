@@ -1,69 +1,52 @@
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Instagram, Twitter, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
-
-    const socialLinks = [
-        { icon: Instagram, href: '#', label: 'Instagram' },
-        { icon: Twitter, href: '#', label: 'Twitter' },
-        { icon: Linkedin, href: '#', label: 'LinkedIn' },
-        { icon: Github, href: '#', label: 'GitHub' },
-    ];
-
-    const quickLinks = [
-        { name: 'About', path: '/about' },
-        { name: 'Events', path: '/events' },
-        { name: 'Departments', path: '/departments' },
-        { name: 'Schedule', path: '/schedule' },
-        { name: 'Register', path: '/register' },
-        { name: 'Contact', path: '/contact' },
-    ];
-
     return (
-        <footer className="relative bg-dark-500 border-t border-white/10 mt-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-                    {/* Brand */}
-                    <div className="space-y-4">
-                        <div className="flex items-center space-x-2">
-                            <Sparkles className="w-8 h-8 text-primary" />
-                            <div>
-                                <h3 className="text-2xl font-bold gradient-text">Futurix 2K26</h3>
-                                <p className="text-xs text-gray-400">Innovation Meets Future</p>
-                            </div>
-                        </div>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                            National-level Technical Symposium organized by Arjun College of Technology.
-                            Join us in celebrating innovation, technology, and excellence.
+        <footer className="border-t border-white/10 bg-black/40 backdrop-blur-md pt-16 pb-8 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10" />
+
+            <div className="section-container relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    {/* Brand Info */}
+                    <div>
+                        <Link to="/" className="inline-block mb-6">
+                            <h2 className="text-2xl font-bold gradient-text">Futurix 2K26</h2>
+                            <p className="text-sm text-gray-400">Arjun College of Technology</p>
+                        </Link>
+                        <p className="text-gray-400 mb-6 leading-relaxed">
+                            A national-level technical symposium bringing together the brightest minds to innovate, compete, and inspire.
                         </p>
-                        <div className="flex space-x-3">
-                            {socialLinks.map((social) => (
-                                <a
-                                    key={social.label}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="p-2 glass rounded-lg hover:bg-primary/20 hover:text-primary transition-all duration-300 group"
-                                    aria-label={social.label}
-                                >
-                                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                                </a>
-                            ))}
+                        <div className="flex space-x-4">
+                            <a href="#" className="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 flex items-center justify-center text-gray-400 hover:text-primary transition-all duration-300">
+                                <FaInstagram className="w-5 h-5" />
+                            </a>
+                            <a href="#" className="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 flex items-center justify-center text-gray-400 hover:text-primary transition-all duration-300">
+                                <FaTwitter className="w-5 h-5" />
+                            </a>
+                            <a href="#" className="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 flex items-center justify-center text-gray-400 hover:text-primary transition-all duration-300">
+                                <FaLinkedin className="w-5 h-5" />
+                            </a>
+                            <a href="https://github.com/ACT-blogs/FuturiX_2026" className="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary/20 flex items-center justify-center text-gray-400 hover:text-primary transition-all duration-300">
+                                <FaGithub className="w-5 h-5" />
+                            </a>
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-                        <ul className="space-y-2">
-                            {quickLinks.map((link) => (
-                                <li key={link.path}>
+                        <h3 className="text-lg font-bold text-white mb-6">Quick Links</h3>
+                        <ul className="space-y-3">
+                            {['About', 'Events', 'Schedule', 'Departments', 'Contact'].map((item) => (
+                                <li key={item}>
                                     <Link
-                                        to={link.path}
-                                        className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm"
+                                        to={`/${item.toLowerCase()}`}
+                                        className="text-gray-400 hover:text-primary transition-colors flex items-center space-x-2 group"
                                     >
-                                        {link.name}
+                                        <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" />
+                                        <span>{item}</span>
                                     </Link>
                                 </li>
                             ))}
@@ -72,22 +55,22 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
-                        <ul className="space-y-3">
+                        <h3 className="text-lg font-bold text-white mb-6">Contact Us</h3>
+                        <ul className="space-y-4">
                             <li className="flex items-start space-x-3 text-gray-400 text-sm">
-                                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                                <FaMapMarkerAlt className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                                 <span>
                                     Arjun College of Technology<br />
-                                    Chennai, Tamil Nadu<br />
-                                    India - 600001
+                                    Coimbatore Main Road,<br />
+                                    Chennai, Tamil Nadu 600001
                                 </span>
                             </li>
                             <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                                <FaPhoneAlt className="w-4 h-4 text-primary flex-shrink-0" />
                                 <span>+91 98765 43210</span>
                             </li>
                             <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                                <FaEnvelope className="w-4 h-4 text-primary flex-shrink-0" />
                                 <span>futurix2026@gmail.com</span>
                             </li>
                         </ul>
@@ -95,19 +78,19 @@ const Footer = () => {
 
                     {/* Event Info */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Event Details</h4>
+                        <h3 className="text-lg font-bold text-white mb-6">Event Details</h3>
                         <div className="space-y-3">
-                            <div className="glass p-4 rounded-lg">
-                                <p className="text-xs text-gray-400 mb-1">Event Date</p>
+                            <div className="glass p-4 rounded-lg border border-white/5">
+                                <p className="text-xs text-gray-400 mb-1 uppercase tracking-wider">Event Date</p>
                                 <p className="text-white font-semibold">February 21, 2026</p>
                             </div>
-                            <div className="glass p-4 rounded-lg">
-                                <p className="text-xs text-gray-400 mb-1">Registration Deadline</p>
+                            <div className="glass p-4 rounded-lg border border-white/5">
+                                <p className="text-xs text-gray-400 mb-1 uppercase tracking-wider">Registration Deadline</p>
                                 <p className="text-white font-semibold">February 18, 2026</p>
                             </div>
                             <Link
                                 to="/register"
-                                className="block text-center btn-primary text-sm py-2"
+                                className="block text-center btn-primary mt-4 py-3"
                             >
                                 Register Now
                             </Link>
@@ -115,27 +98,13 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="mt-12 pt-8 border-t border-white/10">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <p className="text-gray-400 text-sm text-center md:text-left">
-                            © {currentYear} Futurix 2K26. All rights reserved. | Arjun College of Technology
-                        </p>
-                        <div className="flex items-center space-x-6 text-sm text-gray-400">
-                            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-                            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-                        </div>
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+                    <p>&copy; 2026 Futurix. All rights reserved.</p>
+                    <div className="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
                     </div>
-                    <p className="text-center text-xs text-gray-500 mt-4">
-                        Built with ❤️ for innovation and technology
-                    </p>
                 </div>
-            </div>
-
-            {/* Background Decoration */}
-            <div className="absolute inset-0 pointer-events-none opacity-5">
-                <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl" />
-                <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary rounded-full blur-3xl" />
             </div>
         </footer>
     );
