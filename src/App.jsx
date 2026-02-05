@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/FuturiX_2026">
       <div className="min-h-screen bg-dark text-white">
         <Navbar />
         <main>

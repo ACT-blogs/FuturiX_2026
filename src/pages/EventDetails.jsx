@@ -180,30 +180,32 @@ const EventDetails = () => {
                         </motion.div>
 
                         {/* Coordinators */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="glass p-6 rounded-2xl"
-                        >
-                            <h3 className="text-xl font-bold text-white mb-6">Event Coordinators</h3>
-                            <div className="space-y-4">
-                                {event.coordinators.map((coordinator, index) => (
-                                    <div key={index} className="flex items-start space-x-3 p-4 bg-white/5 rounded-lg">
-                                        <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                                        <div>
-                                            <p className="text-white font-semibold">{coordinator.name}</p>
-                                            <a
-                                                href={`tel:${coordinator.phone}`}
-                                                className="text-sm text-gray-400 hover:text-primary transition-colors"
-                                            >
-                                                {coordinator.phone}
-                                            </a>
+                        {event.coordinators && event.coordinators.length > 0 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className="glass p-6 rounded-2xl"
+                            >
+                                <h3 className="text-xl font-bold text-white mb-6">Event Coordinators</h3>
+                                <div className="space-y-4">
+                                    {event.coordinators.map((coordinator, index) => (
+                                        <div key={index} className="flex items-start space-x-3 p-4 bg-white/5 rounded-lg">
+                                            <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                                            <div>
+                                                <p className="text-white font-semibold">{coordinator.name}</p>
+                                                <a
+                                                    href={`tel:${coordinator.phone}`}
+                                                    className="text-sm text-gray-400 hover:text-primary transition-colors"
+                                                >
+                                                    {coordinator.phone}
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        )}
                     </div>
                 </div>
             </div>

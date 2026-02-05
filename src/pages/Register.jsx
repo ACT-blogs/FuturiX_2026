@@ -154,7 +154,7 @@ const Register = () => {
                         <a href="/contact" className="btn-outline">
                             Contact Us
                         </a>
-                        <a href="mailto:futurix@arjuntech.edu" className="btn-secondary">
+                        <a href="mailto:futurix2026@gmail.com" className="btn-secondary">
                             Email Support
                         </a>
                     </div>
