@@ -1,51 +1,47 @@
-import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Events from './pages/Events';
+import EventDetails from './pages/EventDetails';
+import Departments from './pages/Departments';
+import Schedule from './pages/Schedule';
+import Contact from './pages/Contact';
+import Register from './pages/Register';
 
-// Lazy load pages for better performance
-const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/About'));
-const Events = lazy(() => import('./pages/Events'));
-const EventDetails = lazy(() => import('./pages/EventDetails'));
-const Departments = lazy(() => import('./pages/Departments'));
-const Schedule = lazy(() => import('./pages/Schedule'));
-const Register = lazy(() => import('./pages/Register'));
-const Contact = lazy(() => import('./pages/Contact'));
-
-// Loading component
-const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-dark">
-    <div className="text-center">
-      <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-gray-400">Loading...</p>
-    </div>
-  </div>
-);
+// ScrollToTop component
+const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+}
 
 function App() {
-  return (
-    <Router basename="/Futurix_2026">
-      <div className="min-h-screen bg-dark text-white">
-        <Navbar />
-        <main>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/events/:eventId" element={<EventDetails />} />
-              <Route path="/departments" element={<Departments />} />
-              <Route path="/schedule" element={<Schedule />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+    return (
+        <Router basename={import.meta.env.BASE_URL}>
+            <ScrollToTop />
+            <div className="flex flex-col min-h-screen bg-dark text-white font-sans selection:bg-primary/30">
+                <Navbar />
+                <main className="flex-grow">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/events" element={<Events />} />
+                        <Route path="/event/:eventId" element={<EventDetails />} />
+                        <Route path="/departments" element={<Departments />} />
+                        <Route path="/schedule" element={<Schedule />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/register" element={<Register />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
 
 export default App;

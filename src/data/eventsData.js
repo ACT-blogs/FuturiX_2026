@@ -1,8 +1,15 @@
+import { Code2, Network, Cpu, Zap, Cog, Building2, Brain, Shield, Database, Layout } from 'lucide-react';
+
 export const departments = [
-    { id: 'aids', name: 'Artificial Intelligence & Data Science', icon: 'FaBrain', color: 'primary' },
-    { id: 'aiml', name: 'Artificial Intelligence & Machine Learning', icon: 'FaRobot', color: 'secondary' },
-    { id: 'cs', name: 'Cyber Security', icon: 'FaLaptopCode', color: 'primary' },
-    { id: 'csbs', name: 'Computer Science & Business Systems', icon: 'FaChartLine', color: 'secondary' },
+    { id: 'cse', name: 'Computer Science & Engineering', icon: 'Code2', color: 'primary' },
+    { id: 'it', name: 'Information Technology', icon: 'Network', color: 'secondary' },
+    { id: 'ece', name: 'Electronics & Communication', icon: 'Cpu', color: 'primary' },
+    { id: 'mech', name: 'Mechanical Engineering', icon: 'Cog', color: 'primary' },
+    { id: 'civil', name: 'Civil Engineering', icon: 'Building2', color: 'secondary' },
+    { id: 'aids', name: 'AI & Data Science', icon: 'Brain', color: 'primary' },
+    { id: 'aiml', name: 'AI & Machine Learning', icon: 'Layout', color: 'secondary' },
+    { id: 'cs', name: 'Cyber Security', icon: 'Shield', color: 'primary' },
+    { id: 'csbs', name: 'CS & Business Systems', icon: 'Database', color: 'secondary' },
 ];
 
 export const categories = [
@@ -11,417 +18,112 @@ export const categories = [
 ];
 
 export const events = [
+    // CSE Events
+    {
+        id: 'code-rush',
+        name: 'Code Rush',
+        department: 'cse',
+        category: 'technical',
+        shortDescription: 'Speed coding competition',
+        description: 'Code Rush is an intense algorithmic programming competition where participants race against time to solve complex coding challenges.',
+        rules: ['Individual only', '2 hours duration', 'No AI tools allowed'],
+        eligibility: 'Open to all',
+        teamSize: '1',
+        requirements: ['Laptop', 'College ID'],
+        coordinators: [],
+        prizePool: '₹15,000',
+    },
     // AIDS Events
     {
-        id: 'data-science-challenge',
-        name: 'Data Science Challenge',
+        id: 'data-throne',
+        name: 'Data Throne',
         department: 'aids',
         category: 'technical',
-        shortDescription: 'Analyze real-world datasets and build predictive models',
-        description: 'Compete in analyzing complex datasets and building machine learning models to solve real-world problems. Showcase your data science skills in preprocessing, feature engineering, and model optimization.',
-        rules: [
-            'Team size: 2-3 members',
-            'Duration: 4 hours',
-            'Dataset will be provided on the spot',
-            'Use any ML/DL framework (scikit-learn, TensorFlow, PyTorch)',
-            'Submit Jupyter notebook with analysis and model',
-            'Judging based on accuracy, approach, and presentation',
-        ],
-        eligibility: 'Open to all undergraduate students',
-        teamSize: '2-3 members',
-        requirements: [
-            'Laptop with Python and ML libraries installed',
-            'Knowledge of data analysis and machine learning',
-            'Jupyter Notebook or similar environment',
-            'Valid college ID cards',
-        ],
-        coordinators: [
-            { name: 'Dr. Ananya Sharma', phone: '+91 98765 43210' },
-        ],
-        prizePool: 'Cash Prizes',
-    },
-    {
-        id: 'ai-visualization',
-        name: 'AI Data Visualization',
-        department: 'aids',
-        category: 'technical',
-        shortDescription: 'Create stunning visualizations from complex datasets',
-        description: 'Transform raw data into compelling visual stories. Use advanced visualization techniques to uncover insights and present data in an engaging, interactive format.',
-        rules: [
-            'Individual or team of 2',
-            'Duration: 3 hours',
-            'Create interactive dashboards',
-            'Use tools like Tableau, Power BI, or Python libraries',
-            'Focus on storytelling through data',
-        ],
+        shortDescription: 'Data Science Hackathon',
+        description: 'Analyze complex datasets and build predictive models to solve real-world problems in this data science challenge.',
+        rules: ['Team of 2-3', '4 hours duration', 'Datasets provided on spot'],
         eligibility: 'Open to all',
-        teamSize: '1-2 members',
-        requirements: [
-            'Laptop with visualization tools',
-            'Understanding of data analysis',
-            'Valid college ID',
-        ],
-        prizePool: 'Cash Prizes',
+        teamSize: '2-3',
+        requirements: ['Laptop with Python/R', 'College ID'],
+        coordinators: [],
+        prizePool: '₹20,000',
     },
-    {
-        id: 'big-data-analytics',
-        name: 'Big Data Analytics',
-        department: 'aids',
-        category: 'technical',
-        shortDescription: 'Process and analyze large-scale datasets efficiently',
-        description: 'Work with big data technologies to process, analyze, and extract insights from massive datasets. Demonstrate your skills in distributed computing and scalable analytics.',
-        rules: [
-            'Team size: 2-4 members',
-            'Duration: 5 hours',
-            'Use big data frameworks (Spark, Hadoop, etc.)',
-            'Problem statement provided on-site',
-            'Presentation of findings required',
-        ],
-        eligibility: 'Students with big data knowledge',
-        teamSize: '2-4 members',
-        requirements: [
-            'Laptops with big data tools configured',
-            'Knowledge of distributed systems',
-            'Valid college IDs',
-        ],
-        prizePool: 'Exciting Cash Prizes',
-    },
-    {
-        id: 'data-quest',
-        name: 'Data Quest',
-        department: 'aids',
-        category: 'non-technical',
-        shortDescription: 'Data science quiz and puzzle competition',
-        description: 'Test your knowledge of data science concepts, statistics, and industry trends through an engaging quiz and puzzle-solving competition.',
-        rules: [
-            'Individual or team of 2',
-            'Multiple rounds including quiz and puzzles',
-            'Topics: statistics, ML, data engineering, AI ethics',
-            'No electronic devices during quiz',
-        ],
-        eligibility: 'Open to all',
-        teamSize: '1-2 members',
-        requirements: [
-            'Valid college ID',
-            'No special equipment needed',
-        ],
-        prizePool: 'Cash Prizes',
-    },
-
     // AIML Events
     {
-        id: 'deep-learning-challenge',
-        name: 'Deep Learning Challenge',
+        id: 'neural-nexus',
+        name: 'Neural Nexus',
         department: 'aiml',
         category: 'technical',
-        shortDescription: 'Build neural networks for complex AI tasks',
-        description: 'Design and train deep neural networks to solve challenging problems in computer vision, NLP, or other AI domains. Showcase your expertise in modern deep learning architectures.',
-        rules: [
-            'Team size: 2-3 members',
-            'Duration: 5 hours',
-            'Use frameworks like TensorFlow, PyTorch, or Keras',
-            'Problem statement announced on the spot',
-            'Model training and evaluation required',
-            'Presentation and Q&A session',
-        ],
-        eligibility: 'Students with deep learning knowledge',
-        teamSize: '2-3 members',
-        requirements: [
-            'Laptops with GPU support (recommended)',
-            'Deep learning frameworks installed',
-            'Knowledge of neural networks',
-            'Valid college IDs',
-        ],
-        prizePool: 'Exciting Cash Prizes',
-    },
-    {
-        id: 'nlp-hackathon',
-        name: 'NLP Hackathon',
-        department: 'aiml',
-        category: 'technical',
-        shortDescription: 'Natural Language Processing solutions',
-        description: 'Build innovative NLP applications for text analysis, sentiment analysis, chatbots, or language translation. Demonstrate your understanding of modern NLP techniques.',
-        rules: [
-            'Team size: 2-4 members',
-            'Duration: 6 hours',
-            'Use any NLP libraries (NLTK, spaCy, Transformers)',
-            'Working demo required',
-            'Documentation and code submission',
-        ],
-        eligibility: 'Open to all with NLP interest',
-        teamSize: '2-4 members',
-        requirements: [
-            'Laptops with NLP tools',
-            'Python environment',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
-    },
-    {
-        id: 'computer-vision',
-        name: 'Computer Vision Challenge',
-        department: 'aiml',
-        category: 'technical',
-        shortDescription: 'Image processing and object detection competition',
-        description: 'Develop computer vision solutions for image classification, object detection, or image segmentation tasks using state-of-the-art techniques.',
-        rules: [
-            'Team size: 2-3 members',
-            'Duration: 4 hours',
-            'Use OpenCV, TensorFlow, or PyTorch',
-            'Dataset provided on-site',
-            'Accuracy and efficiency will be judged',
-        ],
-        eligibility: 'Students familiar with computer vision',
-        teamSize: '2-3 members',
-        requirements: [
-            'Laptops with CV libraries',
-            'Knowledge of image processing',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
-    },
-    {
-        id: 'ai-ethics-debate',
-        name: 'AI Ethics Debate',
-        department: 'aiml',
-        category: 'non-technical',
-        shortDescription: 'Debate on ethical implications of AI',
-        description: 'Engage in thought-provoking debates on AI ethics, bias, privacy, and the societal impact of artificial intelligence technologies.',
-        rules: [
-            'Team size: 2-3 members',
-            'Topics announced before event',
-            'Formal debate format',
-            'Judging on arguments, presentation, and knowledge',
-        ],
+        shortDescription: 'Deep Learning Championship',
+        description: 'Build and train neural networks to optimize accuracy on computer vision or NLP tasks.',
+        rules: ['Team of 2-4', '6 hours duration', 'Pre-trained models allowed'],
         eligibility: 'Open to all',
-        teamSize: '2-3 members',
-        requirements: [
-            'Research on AI ethics topics',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
+        teamSize: '2-4',
+        requirements: ['Laptop with GPU support (cloud allowed)', 'College ID'],
+        coordinators: [],
+        prizePool: '₹25,000',
     },
-
-    // CS Events
+    // Cyber Security (CS) Events
     {
-        id: 'code-sprint',
-        name: 'Code Sprint',
+        id: 'capture-the-flag',
+        name: 'Capture The Flag',
         department: 'cs',
         category: 'technical',
-        shortDescription: 'Competitive programming marathon',
-        description: 'Race against time to solve algorithmic challenges. Test your problem-solving speed, coding efficiency, and algorithmic thinking in this intense programming competition.',
-        rules: [
-            'Individual participation',
-            'Duration: 3 hours',
-            'Multiple difficulty levels',
-            'Use any programming language (C++/Java/Python preferred)',
-            'No external help or AI tools allowed',
-            'Scoring based on correctness and time',
-        ],
-        eligibility: 'Open to all undergraduate students',
-        teamSize: '1 (Individual)',
-        requirements: [
-            'Laptop with programming environment',
-            'Familiarity with data structures and algorithms',
-            'Valid college ID',
-        ],
-        prizePool: 'Exciting Cash Prizes',
-    },
-    {
-        id: 'web-dev-challenge',
-        name: 'Web Development Challenge',
-        department: 'cs',
-        category: 'technical',
-        shortDescription: 'Build modern web applications',
-        description: 'Create responsive, feature-rich web applications using modern frameworks and technologies. Showcase your full-stack development skills.',
-        rules: [
-            'Team size: 2-3 members',
-            'Duration: 5 hours',
-            'Use any web technologies (React, Vue, Angular, etc.)',
-            'Must be responsive and functional',
-            'Judging on design, functionality, and code quality',
-        ],
+        shortDescription: 'Cyber Security Challenge',
+        description: 'Find vulnerabilities, exploit them, and capture flags in this jeopardy-style CTF competition.',
+        rules: ['Team of 2-3', '4 hours duration', 'Kali Linux recommended'],
         eligibility: 'Open to all',
-        teamSize: '2-3 members',
-        requirements: [
-            'Laptops with development environment',
-            'Knowledge of HTML, CSS, JavaScript',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
+        teamSize: '2-3',
+        requirements: ['Laptop', 'College ID'],
+        coordinators: [],
+        prizePool: '₹20,000',
     },
-    {
-        id: 'cybersecurity-ctf',
-        name: 'Cybersecurity CTF',
-        department: 'cs',
-        category: 'technical',
-        shortDescription: 'Capture the flag security competition',
-        description: 'Solve cybersecurity challenges including cryptography, web exploitation, reverse engineering, and forensics in this exciting CTF competition.',
-        rules: [
-            'Team size: 2-3 members',
-            'Duration: 4 hours',
-            'Multiple challenge categories',
-            'No destructive attacks allowed',
-            'Write-ups required for solved challenges',
-        ],
-        eligibility: 'Students with security interest',
-        teamSize: '2-3 members',
-        requirements: [
-            'Laptops with security tools',
-            'Basic networking and security knowledge',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
-    },
-    {
-        id: 'tech-quiz-cs',
-        name: 'Tech Quiz',
-        department: 'cs',
-        category: 'non-technical',
-        shortDescription: 'Computer science knowledge quiz',
-        description: 'Test your knowledge of computer science fundamentals, programming concepts, and technology trends in this fast-paced quiz competition.',
-        rules: [
-            'Individual or team of 2',
-            'Multiple rounds: prelims, buzzer, rapid fire',
-            'Topics: CS fundamentals, programming, tech news',
-            'No electronic devices allowed',
-        ],
-        eligibility: 'Open to all',
-        teamSize: '1-2 members',
-        requirements: [
-            'Valid college ID',
-        ],
-        prizePool: 'Cash Prizes',
-    },
-
     // CSBS Events
     {
-        id: 'business-analytics',
-        name: 'Business Analytics Challenge',
+        id: 'biz-tech',
+        name: 'BizTech Strategy',
         department: 'csbs',
         category: 'technical',
-        shortDescription: 'Analyze business data for strategic insights',
-        description: 'Use data analytics and business intelligence tools to solve real-world business problems. Combine technical skills with business acumen.',
-        rules: [
-            'Team size: 2-4 members',
-            'Duration: 4 hours',
-            'Business case study provided',
-            'Use analytics tools (Excel, Python, R, Tableau)',
-            'Present findings and recommendations',
-        ],
+        shortDescription: 'Business Technology Case Study',
+        description: 'Solve complex business problems using technology solutions. Present your strategy to a panel of judges.',
+        rules: ['Team of 2-4', 'Presentation round', 'Focus on feasibility and ROI'],
         eligibility: 'Open to all',
-        teamSize: '2-4 members',
-        requirements: [
-            'Laptops with analytics tools',
-            'Understanding of business concepts',
-            'Valid college IDs',
-        ],
-        prizePool: 'Exciting Cash Prizes',
+        teamSize: '2-4',
+        requirements: ['Presentation slides', 'College ID'],
+        coordinators: [],
+        prizePool: '₹15,000',
     },
+    // IT Events
     {
-        id: 'startup-pitch',
-        name: 'Startup Pitch Competition',
-        department: 'csbs',
-        category: 'non-technical',
-        shortDescription: 'Present your innovative business ideas',
-        description: 'Pitch your tech startup ideas to a panel of judges. Combine technology innovation with viable business models.',
-        rules: [
-            'Team size: 3-5 members',
-            'Pitch duration: 10 minutes',
-            'Q&A session with judges',
-            'Business plan submission required',
-            'Judging on innovation, feasibility, and presentation',
-        ],
-        eligibility: 'Open to all',
-        teamSize: '3-5 members',
-        requirements: [
-            'Presentation slides',
-            'Business plan document',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
-    },
-    {
-        id: 'fintech-innovation',
-        name: 'FinTech Innovation',
-        department: 'csbs',
+        id: 'web-master',
+        name: 'Web Master',
+        department: 'it',
         category: 'technical',
-        shortDescription: 'Develop financial technology solutions',
-        description: 'Create innovative fintech applications combining finance and technology. Build solutions for digital payments, blockchain, or financial analytics.',
-        rules: [
-            'Team size: 2-4 members',
-            'Duration: 5 hours',
-            'Working prototype required',
-            'Focus on security and user experience',
-            'Presentation and demo',
-        ],
-        eligibility: 'Students with programming knowledge',
-        teamSize: '2-4 members',
-        requirements: [
-            'Laptops with development tools',
-            'Understanding of financial concepts',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
-    },
-    {
-        id: 'case-study',
-        name: 'Business Case Study',
-        department: 'csbs',
-        category: 'non-technical',
-        shortDescription: 'Solve real-world business challenges',
-        description: 'Analyze complex business scenarios and propose strategic solutions. Demonstrate your analytical thinking and business strategy skills.',
-        rules: [
-            'Team size: 3-4 members',
-            'Duration: 3 hours',
-            'Case study provided on-site',
-            'Written report and presentation',
-            'Judging on analysis, creativity, and feasibility',
-        ],
+        shortDescription: 'Full Stack Development',
+        description: 'Create responsive and dynamic web applications based on the given theme.',
+        rules: ['Team of 2-3', '4 hours', 'Any stack allowed'],
         eligibility: 'Open to all',
-        teamSize: '3-4 members',
-        requirements: [
-            'Laptops for research and presentation',
-            'Valid college IDs',
-        ],
-        prizePool: 'Cash Prizes',
-    },
+        teamSize: '2-3',
+        coordinators: [],
+        prizePool: '₹18,000',
+    }
 ];
 
 // Utility functions
 export const getEventById = (id) => events.find(event => event.id === id);
-
-export const getEventsByDepartment = (deptId) =>
-    events.filter(event => event.department === deptId);
-
-export const getEventsByCategory = (catId) =>
-    events.filter(event => event.category === catId);
-
+export const getEventsByDepartment = (deptId) => events.filter(event => event.department === deptId);
+export const getEventsByCategory = (catId) => events.filter(event => event.category === catId);
 export const getEventsByFilter = (deptId = null, catId = null) => {
     let filtered = events;
-
-    if (deptId && deptId !== 'all') {
-        filtered = filtered.filter(event => event.department === deptId);
-    }
-
-    if (catId && catId !== 'all') {
-        filtered = filtered.filter(event => event.category === catId);
-    }
-
+    if (deptId && deptId !== 'all') filtered = filtered.filter(event => event.department === deptId);
+    if (catId && catId !== 'all') filtered = filtered.filter(event => event.category === catId);
     return filtered;
 };
-
-export const getDepartmentById = (id) =>
-    departments.find(dept => dept.id === id);
-
-export const getCategoryById = (id) =>
-    categories.find(cat => cat.id === id);
-
-// Statistics
+export const getDepartmentById = (id) => departments.find(dept => dept.id === id);
+export const getCategoryById = (id) => categories.find(cat => cat.id === id);
 export const getStats = () => ({
     departments: departments.length,
     totalEvents: events.length,
     technicalEvents: events.filter(e => e.category === 'technical').length,
-    nonTechnicalEvents: events.filter(e => e.category === 'non-technical').length,
-    prizePool: 'Exciting Cash Prizes',
+    prizePool: '₹2,00,000+',
 });
