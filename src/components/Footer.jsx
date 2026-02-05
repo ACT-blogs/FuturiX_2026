@@ -99,11 +99,11 @@ const Footer = () => {
                         <div className="space-y-3">
                             <div className="glass p-4 rounded-lg">
                                 <p className="text-xs text-gray-400 mb-1">Event Date</p>
-                                <p className="text-white font-semibold">March 15-16, 2026</p>
+                                <p className="text-white font-semibold">February 21, 2026</p>
                             </div>
                             <div className="glass p-4 rounded-lg">
                                 <p className="text-xs text-gray-400 mb-1">Registration Deadline</p>
-                                <p className="text-white font-semibold">March 10, 2026</p>
+                                <p className="text-white font-semibold">February 18, 2026</p>
                             </div>
                             <Link
                                 to="/register"

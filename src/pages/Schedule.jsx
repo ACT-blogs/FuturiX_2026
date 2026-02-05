@@ -4,7 +4,7 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 const Schedule = () => {
     const schedule = [
         {
-            day: 'Day 1 - March 15, 2026',
+            day: 'February 21, 2026',
             date: 'Friday',
             sessions: [
                 {
@@ -47,9 +47,9 @@ const Schedule = () => {
                 },
                 {
                     time: '02:00 PM - 04:00 PM',
-                    title: 'Technical Events - Session 2',
-                    location: 'Various Labs',
-                    description: 'AI Challenge, Database Derby, Robo Race, Power Grid Challenge',
+                    title: 'Technical Events - Session 2 & Workshops',
+                    location: 'Various Labs & Workshop Halls',
+                    description: 'AI Challenge, Database Derby, Robo Race, Power Grid Challenge, 3D Printing & Renewable Energy Workshops',
                     type: 'event',
                 },
                 {
@@ -59,65 +59,20 @@ const Schedule = () => {
                     type: 'break',
                 },
                 {
-                    time: '04:30 PM - 06:30 PM',
-                    title: 'Workshop Session 1',
-                    location: 'Workshop Halls',
-                    description: '3D Printing & Renewable Energy Workshops',
-                    type: 'workshop',
-                },
-            ],
-        },
-        {
-            day: 'Day 2 - March 16, 2026',
-            date: 'Saturday',
-            sessions: [
-                {
-                    time: '08:30 AM - 09:00 AM',
-                    title: 'Morning Registration',
-                    location: 'Main Lobby',
-                    type: 'general',
-                },
-                {
-                    time: '09:00 AM - 11:00 AM',
-                    title: 'Non-Technical Events',
+                    time: '04:30 PM - 05:30 PM',
+                    title: 'Non-Technical Events & Finals',
                     location: 'Various Venues',
-                    description: 'Tech Quiz, IT Treasure Hunt, Paper Presentations, Urban Planning',
+                    description: 'Tech Quiz, IT Treasure Hunt, Paper Presentations, Urban Planning, Finals of major events',
                     type: 'event',
                 },
                 {
-                    time: '11:00 AM - 11:30 AM',
-                    title: 'Coffee Break',
-                    location: 'Cafeteria',
-                    type: 'break',
-                },
-                {
-                    time: '11:30 AM - 01:30 PM',
-                    title: 'Workshop Session 2',
-                    location: 'Workshop Halls',
-                    description: 'Modern Surveying Workshop',
-                    type: 'workshop',
-                },
-                {
-                    time: '01:30 PM - 02:30 PM',
-                    title: 'Lunch Break',
-                    location: 'Cafeteria',
-                    type: 'break',
-                },
-                {
-                    time: '02:30 PM - 04:30 PM',
-                    title: 'Finals & Competitions',
-                    location: 'Various Labs',
-                    description: 'Final rounds of major technical events',
-                    type: 'event',
-                },
-                {
-                    time: '04:30 PM - 05:00 PM',
+                    time: '05:30 PM - 06:00 PM',
                     title: 'Expo & Project Showcase',
                     location: 'Exhibition Hall',
                     type: 'expo',
                 },
                 {
-                    time: '05:00 PM - 06:30 PM',
+                    time: '06:00 PM - 07:00 PM',
                     title: 'Prize Distribution & Closing Ceremony',
                     location: 'Main Auditorium',
                     type: 'keynote',
@@ -155,7 +110,7 @@ const Schedule = () => {
                 >
                     <h1 className="heading-lg gradient-text mb-6">Event Schedule</h1>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                        Two days packed with competitions, workshops, and networking opportunities
+                        A full day packed with competitions, workshops, and networking opportunities
                     </p>
 
                     {/* Legend */}

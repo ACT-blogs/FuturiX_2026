@@ -6,7 +6,7 @@ const Register = () => {
         'Registration is open to all undergraduate students from recognized institutions',
         'Team registrations must include all team member details',
         'Each participant can register for multiple events',
-        'Registration deadline: March 10, 2026',
+        'Registration deadline: February 18, 2026',
         'Registration confirmation will be sent via email',
         'Bring your college ID card and registration confirmation on the event day',
         'Workshop registrations are separate and on a first-come, first-served basis',
@@ -78,7 +78,7 @@ const Register = () => {
                         </a>
                         <p className="text-sm text-gray-400 mt-4 flex items-center justify-center space-x-2">
                             <Calendar className="w-4 h-4" />
-                            <span>Deadline: March 10, 2026</span>
+                            <span>Deadline: February 18, 2026</span>
                         </p>
                     </div>
                 </motion.div>

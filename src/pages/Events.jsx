@@ -1,13 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, Search } from 'lucide-react';
 import EventCard from '../components/EventCard';
 import { departments, categories, getEventsByFilter } from '../data/eventsData';
 
 const Events = () => {
+    const [searchParams] = useSearchParams();
     const [selectedDept, setSelectedDept] = useState('all');
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
+
+    // Handle URL parameters for department pre-selection
+    useEffect(() => {
+        const deptParam = searchParams.get('dept');
+        if (deptParam && departments.find(d => d.id === deptParam)) {
+            setSelectedDept(deptParam);
+        }
+    }, [searchParams]);
 
     // Get filtered events
     let filteredEvents = getEventsByFilter(
@@ -79,8 +89,8 @@ const Events = () => {
                             <button
                                 onClick={() => setSelectedDept('all')}
                                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${selectedDept === 'all'
-                                        ? 'bg-primary text-dark-500 shadow-lg shadow-primary/30'
-                                        : 'glass text-gray-300 hover:bg-white/10'
+                                    ? 'bg-primary text-dark-500 shadow-lg shadow-primary/30'
+                                    : 'glass text-gray-300 hover:bg-white/10'
                                     }`}
                             >
                                 All Departments
@@ -90,8 +100,8 @@ const Events = () => {
                                     key={dept.id}
                                     onClick={() => setSelectedDept(dept.id)}
                                     className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${selectedDept === dept.id
-                                            ? 'bg-primary text-dark-500 shadow-lg shadow-primary/30'
-                                            : 'glass text-gray-300 hover:bg-white/10'
+                                        ? 'bg-primary text-dark-500 shadow-lg shadow-primary/30'
+                                        : 'glass text-gray-300 hover:bg-white/10'
                                         }`}
                                 >
                                     {dept.name}
@@ -107,8 +117,8 @@ const Events = () => {
                             <button
                                 onClick={() => setSelectedCategory('all')}
                                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${selectedCategory === 'all'
-                                        ? 'bg-secondary text-white shadow-lg shadow-secondary/30'
-                                        : 'glass text-gray-300 hover:bg-white/10'
+                                    ? 'bg-secondary text-white shadow-lg shadow-secondary/30'
+                                    : 'glass text-gray-300 hover:bg-white/10'
                                     }`}
                             >
                                 All Categories
@@ -118,8 +128,8 @@ const Events = () => {
                                     key={cat.id}
                                     onClick={() => setSelectedCategory(cat.id)}
                                     className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${selectedCategory === cat.id
-                                            ? 'bg-secondary text-white shadow-lg shadow-secondary/30'
-                                            : 'glass text-gray-300 hover:bg-white/10'
+                                        ? 'bg-secondary text-white shadow-lg shadow-secondary/30'
+                                        : 'glass text-gray-300 hover:bg-white/10'
                                         }`}
                                 >
                                     {cat.name}
