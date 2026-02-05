@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-white antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  /* Neon Glow */
+  .neon-glow {
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3),
+      0 0 20px rgba(0, 217, 255, 0.2),
+      0 0 30px rgba(0, 217, 255, 0.1);
+  }
+
+  .neon-glow-purple {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3),
+      0 0 20px rgba(168, 85, 247, 0.2),
+      0 0 30px rgba(168, 85, 247, 0.1);
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-primary to-primary-600 text-dark-500 font-semibold rounded-lg hover:scale-105 transition-all duration-300 neon-glow hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-gradient-to-r from-secondary to-secondary-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300 neon-glow-purple hover:shadow-xl;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-dark transition-all duration-300;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:scale-105 hover:neon-glow cursor-pointer;
+  }
+
+  /* Section Styles */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+
+  /* Heading Styles */
+  .heading-xl {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold font-display;
+  }
+
+  .heading-lg {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold font-display;
+  }
+
+  .heading-md {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold font-display;
+  }
+
+  .heading-sm {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold font-display;
+  }
+
+  /* Badge Styles */
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary/20 text-primary border border-primary/30;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary/20 text-secondary border border-secondary/30;
+  }
+
+  .badge-success {
+    @apply badge bg-green-500/20 text-green-400 border border-green-500/30;
+  }
+
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all;
+  }
+
+  /* Particle Background */
+  .particle-bg {
+    @apply relative overflow-hidden;
+  }
+
+  .particle-bg::before {
+    content: '';
+    @apply absolute inset-0 opacity-30;
+    background-image: radial-gradient(circle at 2px 2px, rgba(0, 217, 255, 0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  /* Mesh Gradient Background */
+  .mesh-gradient {
+    background: radial-gradient(at 40% 20%, rgba(0, 217, 255, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(0, 217, 255, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
+  }
+}
+
+@layer utilities {
+
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-dark-400;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full hover:bg-primary/70;
+  }
+
+  /* Text Shadow */
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Backdrop Blur Variants */
+  .backdrop-blur-strong {
+    backdrop-filter: blur(20px);
+  }
+}
