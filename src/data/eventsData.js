@@ -2,7 +2,6 @@ export const departments = [
     { id: 'cse', name: 'Computer Science & Engineering', icon: 'Code2', color: 'primary' },
     { id: 'it', name: 'Information Technology', icon: 'Network', color: 'secondary' },
     { id: 'ece', name: 'Electronics & Communication Engineering', icon: 'Cpu', color: 'primary' },
-    { id: 'eee', name: 'Electrical & Electronics Engineering', icon: 'Zap', color: 'secondary' },
     { id: 'mech', name: 'Mechanical Engineering', icon: 'Cog', color: 'primary' },
     { id: 'civil', name: 'Civil Engineering', icon: 'Building2', color: 'secondary' },
 ];
