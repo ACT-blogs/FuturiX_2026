@@ -1,32 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Light rays -->
-  <line x1="50" y1="15" x2="50" y2="5" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
-  <line x1="70" y1="20" x2="77" y2="13" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
-  <line x1="80" y1="40" x2="87" y2="40" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
-  <line x1="30" y1="20" x2="23" y2="13" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
-  <line x1="20" y1="40" x2="13" y2="40" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
-  
-  <!-- Light bulb body -->
-  <ellipse cx="50" cy="45" rx="18" ry="22" fill="url(#bulbGradient)"/>
-  
-  <!-- Bulb base -->
-  <rect x="44" y="65" width="12" height="4" fill="#8b7355" rx="1"/>
-  <rect x="43" y="69" width="14" height="3" fill="#6b5345" rx="1"/>
-  <rect x="43" y="72" width="14" height="3" fill="#8b7355" rx="1"/>
-  <rect x="44" y="75" width="12" height="3" fill="#6b5345" rx="1"/>
-  
-  <!-- Filament -->
-  <path d="M 50 35 Q 45 40 50 45 Q 55 50 50 55" stroke="#ff8c00" stroke-width="2" fill="none"/>
-  
-  <!-- Glow effect -->
-  <ellipse cx="50" cy="45" rx="20" ry="24" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.3"/>
-  
-  <!-- Gradients -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
-    <linearGradient id="bulbGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#fff9e6;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#ffe680;stop-opacity:0.9" />
-      <stop offset="100%" style="stop-color:#ffd700;stop-opacity:0.8" />
+    <!-- Gradients for the bulb -->
+    <linearGradient id="bulbCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="bulbGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb700;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bulbYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe680;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+    </linearGradient>
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
+  
+  <!-- Light rays -->
+  <g opacity="0.8">
+    <!-- Top ray -->
+    <polygon points="100,20 95,35 105,35" fill="url(#bulbYellow)"/>
+    <!-- Top-right ray -->
+    <polygon points="135,30 127,42 138,48" fill="url(#bulbCyan)"/>
+    <!-- Right ray -->
+    <polygon points="155,60 145,65 150,75" fill="url(#bulbGold)"/>
+    <!-- Bottom-right ray -->
+    <polygon points="145,95 135,92 140,102" fill="url(#bulbYellow)"/>
+    <!-- Top-left ray -->
+    <polygon points="65,30 62,48 73,42" fill="url(#bulbGold)"/>
+    <!-- Left ray -->
+    <polygon points="45,60 50,75 55,65" fill="url(#bulbCyan)"/>
+    <!-- Bottom-left ray -->
+    <polygon points="55,95 60,102 65,92" fill="url(#bulbYellow)"/>
+  </g>
+  
+  <!-- Bulb body - geometric facets -->
+  <g filter="url(#glow)">
+    <!-- Left cyan facets -->
+    <polygon points="100,50 75,70 85,90" fill="url(#bulbCyan)" opacity="0.9"/>
+    <polygon points="75,70 80,85 85,90" fill="#00d9ff" opacity="0.7"/>
+    <polygon points="85,90 90,100 95,95" fill="#00c4e6" opacity="0.8"/>
+    
+    <!-- Right gold facets -->
+    <polygon points="100,50 125,70 115,90" fill="url(#bulbGold)" opacity="0.9"/>
+    <polygon points="125,70 120,85 115,90" fill="#ffd700" opacity="0.7"/>
+    <polygon points="115,90 110,100 105,95" fill="#ffb700" opacity="0.8"/>
+    
+    <!-- Top facets -->
+    <polygon points="100,50 85,65 100,75" fill="url(#bulbYellow)" opacity="0.85"/>
+    <polygon points="100,50 115,65 100,75" fill="#ffe680" opacity="0.85"/>
+    
+    <!-- Center facets -->
+    <polygon points="100,75 85,90 100,95" fill="url(#bulbCyan)" opacity="0.75"/>
+    <polygon points="100,75 115,90 100,95" fill="url(#bulbGold)" opacity="0.75"/>
+    
+    <!-- Bottom facets -->
+    <polygon points="85,90 95,100 100,95" fill="#00b8d4" opacity="0.9"/>
+    <polygon points="115,90 105,100 100,95" fill="#ffa500" opacity="0.9"/>
+  </g>
+  
+  <!-- Bulb base (screw threads) -->
+  <g>
+    <rect x="88" y="105" width="24" height="5" fill="#8b9dc3" rx="1"/>
+    <rect x="87" y="110" width="26" height="4" fill="#6b7d9f" rx="1"/>
+    <rect x="87" y="114" width="26" height="4" fill="#8b9dc3" rx="1"/>
+    <rect x="88" y="118" width="24" height="5" fill="#6b7d9f" rx="1"/>
+    <ellipse cx="100" cy="125" rx="13" ry="4" fill="#5a6a8a"/>
+  </g>
+  
+  <!-- Filament glow effect -->
+  <ellipse cx="100" cy="75" rx="25" ry="30" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.3"/>
+  <ellipse cx="100" cy="75" rx="30" ry="35" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.2"/>
 </svg>
