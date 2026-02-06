@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Light rays -->
+  <line x1="50" y1="15" x2="50" y2="5" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="70" y1="20" x2="77" y2="13" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="80" y1="40" x2="87" y2="40" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="30" y1="20" x2="23" y2="13" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="20" y1="40" x2="13" y2="40" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Light bulb body -->
+  <ellipse cx="50" cy="45" rx="18" ry="22" fill="url(#bulbGradient)"/>
+  
+  <!-- Bulb base -->
+  <rect x="44" y="65" width="12" height="4" fill="#8b7355" rx="1"/>
+  <rect x="43" y="69" width="14" height="3" fill="#6b5345" rx="1"/>
+  <rect x="43" y="72" width="14" height="3" fill="#8b7355" rx="1"/>
+  <rect x="44" y="75" width="12" height="3" fill="#6b5345" rx="1"/>
+  
+  <!-- Filament -->
+  <path d="M 50 35 Q 45 40 50 45 Q 55 50 50 55" stroke="#ff8c00" stroke-width="2" fill="none"/>
+  
+  <!-- Glow effect -->
+  <ellipse cx="50" cy="45" rx="20" ry="24" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="bulbGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff9e6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffe680;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffd700;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+</svg>
