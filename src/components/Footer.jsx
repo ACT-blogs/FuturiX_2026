@@ -111,7 +111,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Phone className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--accent-primary)' }} />
-                                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>+91 98765 43210</span>
+                                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>+91 80984 21779</span>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--accent-primary)' }} />

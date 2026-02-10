@@ -122,10 +122,10 @@ const Contact = () => {
                         </div>
                         <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Call Us</h3>
                         <p className="text-sm mb-2" style={{ color: 'var(--text-tertiary)' }}>Mon-Fri 9am-6pm</p>
-                        <a href="tel:+919876543210"
+                        <a href="tel:+918098421779"
                             className="font-medium hover:gradient-text transition-all"
                             style={{ color: 'var(--accent-primary)' }}>
-                            +91 98765 43210
+                            +91 80984 21779
                         </a>
                     </motion.div>
 
@@ -246,7 +246,7 @@ const Contact = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                             <div className="w-2 h-2 rounded-full" style={{ background: 'var(--accent-gradient)' }}></div>
-                            <span style={{ color: 'var(--text-tertiary)' }}>Registration Opens Soon</span>
+                            <span style={{ color: 'var(--text-tertiary)' }}>Registration Opens</span>
                         </div>
                     </div>
                 </motion.div>
