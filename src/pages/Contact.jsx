@@ -1,61 +1,322 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, User, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, Navigation, Instagram, Linkedin, Youtube } from 'lucide-react';
+
+// Contact Form Component with mailto functionality
+const ContactForm = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const mailtoLink = `mailto:futurix2026@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\n\n${formData.message}`)}`;
+        window.location.href = mailtoLink;
+    };
+
+    return (
+        <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+                <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                    Your Name
+                </label>
+                <input
+                    type="text"
+                    placeholder="John Doe"
+                    className="input w-full"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                />
+            </div>
+            <div>
+                <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                    Subject
+                </label>
+                <input
+                    type="text"
+                    placeholder="Inquiry about FuturiX 2026"
+                    className="input w-full"
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    required
+                />
+            </div>
+            <div>
+                <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                    Message
+                </label>
+                <textarea
+                    placeholder="Tell us about your inquiry..."
+                    rows="5"
+                    className="input w-full resize-none"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required
+                ></textarea>
+            </div>
+            <button type="submit" className="btn-primary w-full flex items-center justify-center space-x-2">
+                <Send className="w-5 h-5" />
+                <span>Send Message</span>
+            </button>
+        </form>
+    );
+};
 
 const Contact = () => {
+    const collegeAddress = "Thamaraikulam, Pollachi Highway, Coimbatore - 642 120";
+    const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.8!2d77.05181!3d10.77832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ2JzQyLjAiTiA3N8KwMDMnMDYuNSJF!5e0!3m2!1sen!2sin!4v1234567890";
+
     return (
         <div className="min-h-screen pt-24 pb-16">
             <section className="section-container">
+                {/* Hero Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                 >
+                    <div className="inline-flex items-center space-x-2 badge-primary mb-6">
+                        <Mail className="w-4 h-4" />
+                        <span>Get In Touch</span>
+                    </div>
                     <h1 className="heading-lg gradient-text mb-6">Contact Us</h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        Have questions? Get in touch with our team
+                    <p className="text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+                        Have questions about FuturiX 2026? We're here to help! Reach out to our team for any inquiries.
                     </p>
                 </motion.div>
 
-                <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="glass p-8 rounded-2xl">
-                        <h3 className="text-xl font-bold text-white mb-6">Get In Touch</h3>
-                        <div className="space-y-6">
-                            <div className="flex items-start space-x-4">
-                                <Mail className="w-6 h-6 text-primary mt-1" />
+                {/* Contact Info Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="glass-strong p-6 rounded-2xl hover-lift text-center"
+                    >
+                        <div className="w-14 h-14 rounded-xl mx-auto mb-4 flex items-center justify-center"
+                            style={{ background: 'var(--accent-gradient)' }}>
+                            <Mail className="w-7 h-7 text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Email Us</h3>
+                        <p className="text-sm mb-2" style={{ color: 'var(--text-tertiary)' }}>Send us an email</p>
+                        <a href="mailto:futurix2026@gmail.com"
+                            className="font-medium hover:gradient-text transition-all"
+                            style={{ color: 'var(--accent-primary)' }}>
+                            futurix2026@gmail.com
+                        </a>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="glass-strong p-6 rounded-2xl hover-lift text-center"
+                    >
+                        <div className="w-14 h-14 rounded-xl mx-auto mb-4 flex items-center justify-center"
+                            style={{ background: 'var(--accent-gradient)' }}>
+                            <Phone className="w-7 h-7 text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Call Us</h3>
+                        <p className="text-sm mb-2" style={{ color: 'var(--text-tertiary)' }}>Mon-Fri 9am-6pm</p>
+                        <a href="tel:+919876543210"
+                            className="font-medium hover:gradient-text transition-all"
+                            style={{ color: 'var(--accent-primary)' }}>
+                            +91 98765 43210
+                        </a>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="glass-strong p-6 rounded-2xl hover-lift text-center"
+                    >
+                        <div className="w-14 h-14 rounded-xl mx-auto mb-4 flex items-center justify-center"
+                            style={{ background: 'var(--accent-gradient)' }}>
+                            <MapPin className="w-7 h-7 text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Visit Us</h3>
+                        <p className="text-sm mb-2" style={{ color: 'var(--text-tertiary)' }}>Arjun College of Technology</p>
+                        <p className="font-medium" style={{ color: 'var(--text-secondary)' }}>
+                            {collegeAddress}
+                        </p>
+                    </motion.div>
+                </div>
+
+                {/* Map and Contact Form Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                    {/* Interactive Map */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="glass-strong rounded-2xl overflow-hidden"
+                    >
+                        <div className="p-6 border-b" style={{ borderColor: 'var(--border-color)' }}>
+                            <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-gray-400 text-sm">Email</p>
-                                    <a href="mailto:futurix2026@gmail.com" className="text-white hover:text-primary">
-                                        futurix2026@gmail.com
-                                    </a>
+                                    <h3 className="text-xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
+                                        Our Location
+                                    </h3>
+                                    <p className="text-sm" style={{ color: 'var(--text-tertiary)' }}>
+                                        Find us on the map
+                                    </p>
                                 </div>
+                                <a
+                                    href={`https://www.google.com/maps/dir/?api=1&destination=10.77832,77.05181`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-outline flex items-center space-x-2"
+                                >
+                                    <Navigation className="w-4 h-4" />
+                                    <span>Get Directions</span>
+                                </a>
                             </div>
-                            <div className="flex items-start space-x-4">
-                                <Phone className="w-6 h-6 text-primary mt-1" />
+                        </div>
+                        <div className="relative h-96">
+                            <iframe
+                                src={mapEmbedUrl}
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Arjun College of Technology Location"
+                            />
+                        </div>
+                        <div className="p-6 bg-gradient-to-r from-cyan-500/10 to-blue-500/10">
+                            <div className="flex items-start space-x-3">
+                                <MapPin className="w-5 h-5 mt-0.5" style={{ color: 'var(--accent-primary)' }} />
                                 <div>
-                                    <p className="text-gray-400 text-sm">Phone</p>
-                                    <p className="text-white">+91 98765 43210</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start space-x-4">
-                                <MapPin className="w-6 h-6 text-primary mt-1" />
-                                <div>
-                                    <p className="text-gray-400 text-sm">Address</p>
-                                    <p className="text-white">Arjun College of Technology, Chennai</p>
+                                    <p className="font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
+                                        Arjun College of Technology
+                                    </p>
+                                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                        {collegeAddress}
+                                    </p>
+                                    <p className="text-xs mt-2" style={{ color: 'var(--text-tertiary)' }}>
+                                        📍 Coordinates: 10.77832°N, 77.05181°E
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="glass p-8 rounded-2xl">
-                        <form className="space-y-4">
-                            <input type="text" placeholder="Name" className="input w-full" />
-                            <input type="email" placeholder="Email" className="input w-full" />
-                            <textarea placeholder="Message" rows="4" className="input w-full resize-none"></textarea>
-                            <button className="btn-primary w-full">Send Message</button>
-                        </form>
-                    </div>
+                    {/* Contact Form */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 }}
+                        className="glass-strong p-8 rounded-2xl"
+                    >
+                        <h3 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
+                            Send us a Message
+                        </h3>
+                        <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
+                            Fill out the form below to send us an email directly.
+                        </p>
+                        <ContactForm />
+                    </motion.div>
                 </div>
+
+                {/* Additional Info */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 }}
+                    className="glass-strong p-8 rounded-2xl text-center"
+                >
+                    <Clock className="w-12 h-12 mx-auto mb-4" style={{ color: 'var(--accent-primary)' }} />
+                    <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
+                        Event Information
+                    </h3>
+                    <p className="max-w-2xl mx-auto mb-4" style={{ color: 'var(--text-secondary)' }}>
+                        FuturiX 2026 is a premier technical symposium hosted by Arjun College of Technology.
+                        Join us for an exciting showcase of innovation, technology, and talent.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+                        <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 rounded-full" style={{ background: 'var(--accent-gradient)' }}></div>
+                            <span style={{ color: 'var(--text-tertiary)' }}>Event Date: February 21, 2026</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 rounded-full" style={{ background: 'var(--accent-gradient)' }}></div>
+                            <span style={{ color: 'var(--text-tertiary)' }}>Registration Opens Soon</span>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Social Media Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 }}
+                    className="glass-strong p-8 rounded-2xl text-center"
+                >
+                    <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
+                        Connect With Us
+                    </h3>
+                    <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
+                        Follow us on social media for the latest updates and announcements
+                    </p>
+                    <div className="flex items-center justify-center gap-4">
+                        {/* Instagram */}
+                        <motion.a
+                            href="https://www.instagram.com/arjunct2013/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="glass-strong p-4 rounded-2xl hover-lift group"
+                            style={{ minWidth: '120px' }}
+                        >
+                            <Instagram className="w-8 h-8 mx-auto mb-2 transition-colors"
+                                style={{ color: 'var(--accent-primary)' }} />
+                            <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                                Instagram
+                            </p>
+                        </motion.a>
+
+                        {/* LinkedIn */}
+                        <motion.a
+                            href="https://www.linkedin.com/company/arjuncollegeoftechnology/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="glass-strong p-4 rounded-2xl hover-lift group"
+                            style={{ minWidth: '120px' }}
+                        >
+                            <Linkedin className="w-8 h-8 mx-auto mb-2 transition-colors"
+                                style={{ color: 'var(--accent-primary)' }} />
+                            <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                                LinkedIn
+                            </p>
+                        </motion.a>
+
+                        {/* YouTube */}
+                        <motion.a
+                            href="https://www.youtube.com/@arjuncollegeoftechnologyco1739"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="glass-strong p-4 rounded-2xl hover-lift group"
+                            style={{ minWidth: '120px' }}
+                        >
+                            <Youtube className="w-8 h-8 mx-auto mb-2 transition-colors"
+                                style={{ color: 'var(--accent-primary)' }} />
+                            <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                                YouTube
+                            </p>
+                        </motion.a>
+                    </div>
+                </motion.div>
             </section>
         </div>
     );

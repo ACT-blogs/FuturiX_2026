@@ -20,8 +20,19 @@ const EventDetails = () => {
         );
     }
 
-    const department = getDepartmentById(event.department);
+    // Handle both single department and multiple departments
+    let departmentName = '';
+    if (event.departments) {
+        departmentName = event.departments.map(d => getDepartmentById(d)?.name).filter(Boolean).join(' & ');
+    } else {
+        departmentName = getDepartmentById(event.department)?.name;
+    }
+
     const category = getCategoryById(event.category);
+
+    const rules = event.rules || [];
+    const requirements = event.requirements || [];
+    const coordinators = event.coordinators || [];
 
     return (
         <div className="min-h-screen pt-24 pb-16">
@@ -40,7 +51,7 @@ const EventDetails = () => {
                         >
                             <div className="flex flex-wrap gap-3 mb-6">
                                 <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/10">
-                                    {department?.name}
+                                    {departmentName}
                                 </span>
                                 <span className={`px-3 py-1 rounded-full text-xs font-semibold ${category?.id === 'technical' ? 'bg-primary/20 text-primary border border-primary/20' : 'bg-secondary/20 text-secondary border border-secondary/20'}`}>
                                     {category?.name}
@@ -56,7 +67,7 @@ const EventDetails = () => {
                                 Rules & Regulations
                             </h2>
                             <ul className="space-y-3">
-                                {event.rules.map((rule, i) => (
+                                {rules.map((rule, i) => (
                                     <li key={i} className="flex items-start space-x-3 text-gray-300">
                                         <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0" />
                                         <span>{rule}</span>
@@ -65,14 +76,14 @@ const EventDetails = () => {
                             </ul>
                         </div>
 
-                        {event.requirements && (
+                        {requirements.length > 0 && (
                             <div className="glass p-8 rounded-2xl">
                                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
                                     <AlertCircle className="w-6 h-6 text-secondary mr-2" />
                                     Requirements
                                 </h2>
                                 <ul className="space-y-3">
-                                    {event.requirements.map((req, i) => (
+                                    {requirements.map((req, i) => (
                                         <li key={i} className="flex items-start space-x-3 text-gray-300">
                                             <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2.5 flex-shrink-0" />
                                             <span>{req}</span>
@@ -112,11 +123,11 @@ const EventDetails = () => {
                             </div>
                         </div>
 
-                        {event.coordinators && event.coordinators.length > 0 && (
+                        {coordinators.length > 0 && (
                             <div className="glass p-6 rounded-2xl">
                                 <h3 className="text-xl font-bold text-white mb-4">Coordinators</h3>
                                 <div className="space-y-3">
-                                    {event.coordinators.map((c, i) => (
+                                    {coordinators.map((c, i) => (
                                         <div key={i} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                             <div>
                                                 <p className="text-white font-medium">{c.name}</p>

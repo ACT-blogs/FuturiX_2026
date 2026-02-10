@@ -1,97 +1,162 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Instagram, Linkedin, Youtube, Mail, MapPin, Phone, Heart } from 'lucide-react';
 
 const Footer = () => {
-    return (
-        <footer className="bg-black/50 border-t border-white/5 pt-16 pb-8 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+    const currentYear = new Date().getFullYear();
 
-            <div className="section-container relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    const socialLinks = [
+        { icon: Instagram, href: 'https://www.instagram.com/arjunct2013/', label: 'Instagram' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/company/arjuncollegeoftechnology/', label: 'LinkedIn' },
+        { icon: Youtube, href: 'https://www.youtube.com/@arjuncollegeoftechnologyco1739', label: 'YouTube' },
+    ];
+
+    const quickLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'Events', path: '/events' },
+        { name: 'Departments', path: '/departments' },
+        { name: 'Register', path: '/register' },
+    ];
+
+    return (
+        <footer className="relative border-t" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+            {/* Gradient Line */}
+            <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'var(--accent-gradient)' }} />
+
+            <div className="section-container">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Brand Info */}
-                    <div className="space-y-6">
-                        <Link to="/" className="flex items-center space-x-2 group">
-                            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
-                                <Zap className="w-6 h-6 text-white" />
-                            </div>
-                            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-6"
+                    >
+                        <Link to="/" className="flex items-center space-x-3 group">
+                            <motion.div
+                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                transition={{ duration: 0.3 }}
+                                className="w-12 h-12 flex items-center justify-center"
+                            >
+                                <img
+                                    src={`${import.meta.env.BASE_URL}logo.svg`}
+                                    alt="FuturiX Logo"
+                                    className="w-full h-full object-contain drop-shadow-lg"
+                                />
+                            </motion.div>
+                            <span className="text-2xl font-bold gradient-text">
                                 Futurix_2026
                             </span>
                         </Link>
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                             A National Level Technical Symposium showcasing innovation, technology, and creativity.
                         </p>
-                        <div className="flex space-x-4">
-                            <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-primary/20 hover:text-primary transition-colors">
-                                <Instagram className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-primary/20 hover:text-primary transition-colors">
-                                <Linkedin className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-primary/20 hover:text-primary transition-colors">
-                                <Twitter className="w-5 h-5" />
-                            </a>
+                        <div className="flex space-x-3">
+                            {socialLinks.map((social, index) => {
+                                const Icon = social.icon;
+                                return (
+                                    <motion.a
+                                        key={social.label}
+                                        href={social.href}
+                                        whileHover={{ scale: 1.1, y: -2 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="w-11 h-11 rounded-xl flex items-center justify-center glass hover-lift"
+                                        style={{ borderColor: 'var(--border-color)' }}
+                                        aria-label={social.label}
+                                    >
+                                        <Icon className="w-5 h-5" style={{ color: 'var(--accent-primary)' }} />
+                                    </motion.a>
+                                );
+                            })}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h3 className="text-lg font-bold text-white mb-6">Quick Links</h3>
-                        <ul className="space-y-4">
-                            {[
-                                { name: 'Home', path: '/' },
-                                { name: 'Events', path: '/events' },
-                                { name: 'Schedule', path: '/schedule' },
-                                { name: 'Register', path: '/register' },
-                            ].map((link) => (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                    >
+                        <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Quick Links</h3>
+                        <ul className="space-y-3">
+                            {quickLinks.map((link) => (
                                 <li key={link.name}>
-                                    <Link to={link.path} className="text-gray-400 hover:text-primary transition-colors inline-block relative group">
-                                        <span className="group-hover:translate-x-2 transition-transform inline-block">
-                                            {link.name}
-                                        </span>
+                                    <Link
+                                        to={link.path}
+                                        className="inline-block transition-all hover:translate-x-2"
+                                        style={{ color: 'var(--text-secondary)' }}
+                                    >
+                                        <span className="hover:gradient-text">{link.name}</span>
                                     </Link>
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* Contact Info */}
-                    <div>
-                        <h3 className="text-lg font-bold text-white mb-6">Contact Us</h3>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Contact Us</h3>
                         <ul className="space-y-4">
-                            <li className="flex items-start space-x-3 text-gray-400 text-sm leading-relaxed">
-                                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                                <span>Arjun College of Technology,<br />Coimbatore Main Road, Chennai 600001</span>
+                            <li className="flex items-start space-x-3">
+                                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'var(--accent-primary)' }} />
+                                <span className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                    Arjun College of Technology,<br />Thamaraikulam, Pollachi Highway,<br />Coimbatore - 642 120
+                                </span>
                             </li>
-                            <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                                <span>+91 98765 43210</span>
+                            <li className="flex items-center space-x-3">
+                                <Phone className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--accent-primary)' }} />
+                                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>+91 98765 43210</span>
                             </li>
-                            <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                                <span>futurix2026@gmail.com</span>
+                            <li className="flex items-center space-x-3">
+                                <Mail className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--accent-primary)' }} />
+                                <a href="mailto:futurix2026@gmail.com" className="text-sm hover:gradient-text transition-all" style={{ color: 'var(--text-secondary)' }}>
+                                    futurix2026@gmail.com
+                                </a>
                             </li>
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* Important Dates */}
-                    <div>
-                        <h3 className="text-lg font-bold text-white mb-6">Important Dates</h3>
-                        <div className="space-y-3">
-                            <div className="glass p-4 rounded-lg">
-                                <p className="text-xs text-gray-400 mb-1">Event Date</p>
-                                <p className="text-white font-semibold">February 21, 2026</p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Important Dates</h3>
+                        <div className="space-y-4">
+                            <div className="glass p-4 rounded-xl hover-lift">
+                                <p className="text-xs mb-1" style={{ color: 'var(--text-tertiary)' }}>Event Date</p>
+                                <p className="font-semibold gradient-text">February 21, 2026</p>
                             </div>
-                            <div className="glass p-4 rounded-lg">
-                                <p className="text-xs text-gray-400 mb-1">Registration Deadline</p>
-                                <p className="text-white font-semibold">February 18, 2026</p>
+                            <div className="glass p-4 rounded-xl hover-lift">
+                                <p className="text-xs mb-1" style={{ color: 'var(--text-tertiary)' }}>Online Registration</p>
+                                <p className="font-semibold gradient-text">Until Feb 20, 2026</p>
+                            </div>
+                            <div className="glass p-4 rounded-xl hover-lift">
+                                <p className="text-xs mb-1" style={{ color: 'var(--text-tertiary)' }}>Spot Registration</p>
+                                <p className="font-semibold gradient-text">Available on Event Day</p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
-                <div className="border-t border-white/5 pt-8 text-center text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
-                    <p>© 2026 Futurix_2026. All rights reserved.</p>
+                {/* Bottom Bar */}
+                <div className="border-t pt-8 pb-6" style={{ borderColor: 'var(--border-color)' }}>
+                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                        <p className="text-sm flex items-center" style={{ color: 'var(--text-tertiary)' }}>
+                            © {currentYear} Futurix_2026. All rights reserved.
+                        </p>
+                        <p className="text-sm flex items-center" style={{ color: 'var(--text-tertiary)' }}>
+                            Made with <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" /> by ACT Team
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>

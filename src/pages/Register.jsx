@@ -6,10 +6,10 @@ const Register = () => {
         'Registration is open to all undergraduate students from recognized institutions',
         'Team registrations must include all team member details',
         'Each participant can register for multiple events',
-        'Registration deadline: February 18, 2026',
-        'Registration confirmation will be sent via email',
+        'Online registration deadline: February 20, 2026',
+        'Spot registration available on event day (February 21, 2026)',
+        'Registration confirmation will be sent via email for online registrations',
         'Bring your college ID card and registration confirmation on the event day',
-        'Workshop registrations are separate and on a first-come, first-served basis',
         'For team events, only one member needs to register the entire team',
     ];
 
@@ -68,7 +68,7 @@ const Register = () => {
                             Click the button below to fill out the registration form and secure your spot at Futurix 2K26
                         </p>
                         <a
-                            href="https://forms.google.com"
+                            href="https://forms.gle/18DAcafyY3CbBmQN7"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center space-x-2 btn-primary text-lg group"
@@ -76,9 +76,15 @@ const Register = () => {
                             <span>Open Registration Form</span>
                             <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <p className="text-sm text-gray-400 mt-4 flex items-center justify-center space-x-2">
-                            <Calendar className="w-4 h-4" />
-                            <span>Deadline: February 18, 2026</span>
+                        <p className="text-sm mt-4 flex flex-col items-center justify-center space-y-2" style={{ color: 'var(--text-secondary)' }}>
+                            <span className="flex items-center space-x-2">
+                                <Calendar className="w-4 h-4" />
+                                <span>Online Registration: Until February 20, 2026</span>
+                            </span>
+                            <span className="flex items-center space-x-2">
+                                <CheckCircle2 className="w-4 h-4" />
+                                <span>Spot Registration: Available on Event Day</span>
+                            </span>
                         </p>
                     </div>
                 </motion.div>

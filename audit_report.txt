@@ -1,0 +1,81 @@
+============================================================
+EVENT AUDIT REPORT
+============================================================
+
+HACKATHON:
+  Required: 5 events
+  Current: 2 events
+    [X] Vibe-Athon -> MISSING
+    [X] Prompt-Athon -> MISSING
+    [X] Data-Athon -> MISSING
+    [X] Fix-It Code -> MISSING
+    [X] Web-Sprint -> MISSING
+
+PAPER PRESENTATION:
+  Required: 1 events
+  Current: 9 events
+    [OK] Paper Presentation -> Paper Presentation - CSE
+
+PROJECT EXHIBIT:
+  Required: 2 events
+  Current: 2 events
+    [OK] Project Expo -> Project Expo
+    [OK] Project Presentation -> Project Presentation
+
+TECHNICAL:
+  Required: 11 events
+  Current: 13 events
+    [OK] Data Dash -> Data Dash
+    [X] BI-Crunch -> MISSING
+    [OK] Blind Coding -> Blind Coding
+    [OK] Circuit Debugging -> Circuit Debugging
+    [X] Cyber-Safe -> MISSING
+    [X] CAD Modeling -> MISSING
+    [X] CADD Master -> MISSING
+    [OK] Logic Lockdown -> Logic Lockdown
+    [OK] Tech Trek -> Tech Trek
+    [X] Tech Quiz -> MISSING
+    [X] Unbreakable Challenge -> MISSING
+
+NON TECHNICAL:
+  Required: 11 events
+  Current: 7 events
+    [OK] JAM -> Just A Minute (JAM)
+    [X] Poster Design -> MISSING
+    [X] Hear-Me-Out -> MISSING
+    [OK] Adboard -> AdBoard
+    [X] Anime Quiz -> MISSING
+    [X] Technical Memes -> MISSING
+    [OK] Photography -> Mobile Photography
+    [X] Voltx Treasure -> MISSING
+    [OK] Fun Collage -> Fun Collage
+    [X] Brick-O-Mania -> MISSING
+    [X] Mr. King & Ms. Queen -> MISSING
+
+============================================================
+SUMMARY
+============================================================
+
+Missing Events: 18
+  - Vibe-Athon (should be in hackathon)
+  - Prompt-Athon (should be in hackathon)
+  - Data-Athon (should be in hackathon)
+  - Fix-It Code (should be in hackathon)
+  - Web-Sprint (should be in hackathon)
+  - BI-Crunch (should be in technical)
+  - Cyber-Safe (should be in technical)
+  - CAD Modeling (should be in technical)
+  - CADD Master (should be in technical)
+  - Tech Quiz (should be in technical)
+  - Unbreakable Challenge (should be in technical)
+  - Poster Design (should be in non-technical)
+  - Hear-Me-Out (should be in non-technical)
+  - Anime Quiz (should be in non-technical)
+  - Technical Memes (should be in non-technical)
+  - Voltx Treasure (should be in non-technical)
+  - Brick-O-Mania (should be in non-technical)
+  - Mr. King & Ms. Queen (should be in non-technical)
+
+Wrong Category: 0
+
+============================================================
