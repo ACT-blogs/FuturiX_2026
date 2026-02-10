@@ -24,7 +24,7 @@ export const events = [
     // Hackathon Events,
     {
         id: 'data-athon',
-        name: 'Data-A-Thon',
+        name: 'Data-AThon',
         department: 'aiml',
         category: 'hackathon',
         shortDescription: 'Turn raw data into meaningful insights',
@@ -399,7 +399,7 @@ export const events = [
     },
     {
         id: 'vibeathon',
-        name: 'Vibe-A-Thon',
+        name: 'Vibe-AThon',
         department: 'ai&ds',
         category: 'hackathon',
         shortDescription: 'Ideate, analyze, and innovate with data-driven thinking',
@@ -945,9 +945,9 @@ export const events = [
         ],
         coordinators: [],
         prizePool: 'Cash Prize + Certificate'
-},
+    },
     {
-        id: 'technical-memes',
+        id: 'technical-memes-cs',
         name: 'Technical Memes',
         department: 'cs',
         category: 'non-technical',
