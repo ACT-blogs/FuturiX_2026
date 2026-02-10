@@ -247,6 +247,96 @@ const About = () => {
                         </div>
                     </div>
                 </motion.div>
+
+                {/* About Arjun College Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-24 relative"
+                >
+                    {/* Decorative Background Blur */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-pink-500/10 blur-3xl rounded-full -z-10"></div>
+
+                    <div className="glass-strong p-8 md:p-12 rounded-3xl border border-white/10 overflow-hidden relative group hover:border-purple-500/30 transition-all duration-500">
+                        {/* Shimmer Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer z-0"></div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                            {/* Logo Column */}
+                            <motion.div
+                                className="lg:col-span-5 flex justify-center"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full glass p-6 flex items-center justify-center border-4 border-white/10 shadow-[0_0_50px_rgba(139,92,246,0.3)] bg-black/40">
+                                    <div className="absolute inset-0 rounded-full border border-white/20 animate-spin-slow-reverse" style={{ animationDuration: '20s' }}></div>
+                                    <div className="absolute inset-2 rounded-full border border-purple-500/20 animate-spin-slow" style={{ animationDuration: '15s' }}></div>
+
+                                    {/* Logo Image Placeholder - User can replace src with actual logo path */}
+                                    <div className="relative w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-white">
+                                        <img
+                                            src={`${import.meta.env.BASE_URL}logo_act.png`}
+                                            alt="Arjun College of Technology"
+                                            className="w-full h-full object-contain p-4 hover:scale-110 transition-transform duration-500"
+                                            onError={(e) => {
+                                                e.target.style.display = 'none';
+                                                e.target.nextElementSibling.style.display = 'flex';
+                                            }}
+                                        />
+                                        <div className="hidden absolute inset-0 flex-col items-center justify-center text-center p-4 bg-gradient-to-br from-gray-900 to-gray-800">
+                                            <span className="text-5xl mb-2">🏛️</span>
+                                            <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">ARJUN</span>
+                                            <span className="text-[10px] text-gray-400 tracking-widest mt-1">COLLEGE OF TECHNOLOGY</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Content Column */}
+                            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+                                <div>
+                                    <span className="px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 text-sm font-semibold border border-purple-500/30 mb-4 inline-block">
+                                        Organized By
+                                    </span>
+                                    <h2 className="heading-md gradient-text mb-2">Arjun College of Technology</h2>
+                                    <p className="text-gray-400 text-sm font-medium tracking-wide">EXCELLENCE • INNOVATION • LEADERSHIP</p>
+                                </div>
+
+                                <p className="text-lg text-gray-300 leading-relaxed font-light">
+                                    <span className="text-white font-semibold">Arjun College of Technology</span> stands as a beacon of excellence in technical education,
+                                    committed to nurturing future leaders through rigorous academics and practical innovation.
+                                    Located in a serene environment, we offer state-of-the-art infrastructure and a vibrant
+                                    learning ecosystem.
+                                </p>
+
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+                                    <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                        <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto lg:mx-0 mb-2 text-blue-400">
+                                            <Globe className="w-4 h-4" />
+                                        </div>
+                                        <h4 className="text-white font-bold text-sm">Global Vision</h4>
+                                        <p className="text-xs text-gray-400 mt-1">World-class standards</p>
+                                    </div>
+                                    <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                        <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center mx-auto lg:mx-0 mb-2 text-purple-400">
+                                            <Lightbulb className="w-4 h-4" />
+                                        </div>
+                                        <h4 className="text-white font-bold text-sm">Innovation</h4>
+                                        <p className="text-xs text-gray-400 mt-1">Cutting-edge labs</p>
+                                    </div>
+                                    <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                        <div className="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center mx-auto lg:mx-0 mb-2 text-pink-400">
+                                            <Users className="w-4 h-4" />
+                                        </div>
+                                        <h4 className="text-white font-bold text-sm">Community</h4>
+                                        <p className="text-xs text-gray-400 mt-1">Holistic growth</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
             </section>
         </div>
     );
