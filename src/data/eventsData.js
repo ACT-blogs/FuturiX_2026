@@ -340,7 +340,7 @@ export const events = [
     },
     {
         id: 'promptathon',
-        name: 'Prompt-A-Thon',
+        name: 'Prompt-AThon',
         department: 'ai&ds',
         category: 'hackathon',
         shortDescription: 'Craft powerful prompts to unlock AI potential',
@@ -383,53 +383,6 @@ export const events = [
         requirements: [
             'Laptop with data analysis tools installed',
             'Basic knowledge of statistics and data analysis',
-            'College ID'
-        ],
-        coordinators: [],
-        prizePool: 'Cash Prize + Certificate'
-    },
-    {
-        id: 'ai-idea-pitch',
-        name: 'AI Idea Pitch',
-        department: 'aiml',
-        category: 'technical',
-        shortDescription: 'Pitch innovative AI-powered solutions',
-        description: 'AI Idea Pitch provides a platform for creative minds to propose innovative solutions using Artificial Intelligence. Participants must identify a real-world problem and present how AI can effectively solve it. This event emphasizes ideation, feasibility, business impact, and clarity of explanation rather than coding skills.',
-        rules: [
-            'Teams can have 1 to 4 participants',
-            'Presentation must be delivered using a PPT slide deck',
-            '5 minutes for presentation followed by 2 minutes of Q&A',
-            'The idea must be original and not copied from existing solutions',
-            'Prototype is optional but diagrams or mockups are encouraged'
-        ],
-        eligibility: 'Open to all students',
-        teamSize: '1-4',
-        requirements: [
-            'Laptop',
-            'Presentation slides (PPT)',
-            'College ID'
-        ],
-        coordinators: [],
-        prizePool: 'Cash Prize + Certificate'
-    },
-    {
-        id: 'code-debugging',
-        name: 'Code Debugging',
-        department: 'aiml',
-        category: 'technical',
-        shortDescription: 'Identify and fix bugs under pressure',
-        description: 'Code Debugging is a fast-paced competition that challenges participants to identify and correct errors in given code snippets. The event tests programming fundamentals, logical thinking, and attention to detail across popular programming languages.',
-        rules: [
-            'Individual or team of 2 participants',
-            'Programming languages include C, Java, and Python',
-            'No internet, mobile phones, or external resources allowed',
-            'Participants are judged based on accuracy and speed',
-            'Any form of malpractice will result in disqualification'
-        ],
-        eligibility: 'Open to all',
-        teamSize: '1-2',
-        requirements: [
-            'Basic programming knowledge',
             'College ID'
         ],
         coordinators: [],
@@ -555,32 +508,6 @@ export const events = [
         requirements: ['College ID'],
         coordinators: [],
         prizePool: 'Certificate',
-    },
-    {
-        id: 'cad-modelling',
-        name: 'CAD Modelling',
-        department: 'mech',
-        category: 'technical',
-        shortDescription: 'Convert 2D drawings into precise 3D models',
-        description: 'CAD Modelling is a technical design event where participants are required to convert a given 2D drawing into an accurate 3D model using CAD software. The event evaluates participants’ understanding of engineering drawing standards, dimensional accuracy, and modeling consistency.',
-        rules: [
-            'Participants must convert the given 2D design into a 3D model',
-            'Systems will be provided by the organizers',
-            'Participants must follow ISO or ANSI drawing standards',
-            'Proper scale and units must be used',
-            'Correct dimensions and tolerances must be applied',
-            'Maintain proper layers and naming conventions',
-            'Ensure accuracy and consistency in the final model'
-        ],
-        eligibility: 'Open to all students',
-        teamSize: 'Individual',
-        requirements: [
-            'Basic knowledge of CAD software',
-            'Understanding of engineering drawing standards',
-            'College ID'
-        ],
-        coordinators: [],
-        prizePool: 'Cash Prize + Certificate'
     },
     {
         id: 'technical-quiz-mech',
@@ -715,7 +642,7 @@ export const events = [
     {
         id: 'poster-making',
         name: 'Poster Making',
-        department: 'cse',
+        department: 'aiml',
         category: 'non-technical',
         shortDescription: 'Express ideas through visual creativity',
         description: 'Poster Making is a creative competition that focuses on visual storytelling. Participants are required to design an original poster based on a theme announced on the spot. The event evaluates creativity, clarity of message, and artistic expression.',
@@ -762,7 +689,7 @@ export const events = [
     },
     {
         id: 'mobile-photography',
-        name: 'Mobile Photography',
+        name: 'Photography',
         department: 'mech',
         category: 'non-technical',
         shortDescription: 'Capture creativity through your smartphone lens',
@@ -791,33 +718,6 @@ export const events = [
         prizePool: 'Certificate of Excellence'
     },
     {
-        id: 'treasure-hunt-ece',
-        name: 'Treasure Hunt',
-        department: 'ece',
-        category: 'non-technical',
-        shortDescription: 'Solve clues and race to the final treasure',
-        description: 'Treasure Hunt is a fun-filled non-technical event that tests participants’ logical thinking, observation skills, teamwork, and presence of mind. Teams solve a series of clues spread across the campus, leading them step by step toward the final treasure.',
-        rules: [
-            'Participation is open to all students',
-            'Each team must consist of 3 to 4 members',
-            'The event will be conducted across multiple checkpoints',
-            'Clues may include riddles, puzzles, and aptitude-based questions',
-            'Use of mobile phones or internet is strictly prohibited',
-            'Teams must remain within designated campus areas',
-            'Unsafe behavior, running, or misconduct is not allowed',
-            'The team that completes all clues correctly in the least time wins',
-            'Organizers’ decision will be final and binding'
-        ],
-        eligibility: 'Open to all students',
-        teamSize: '3-4',
-        requirements: [
-            'Team coordination and logical thinking',
-            'College ID'
-        ],
-        coordinators: [],
-        prizePool: 'Exciting Prizes + Certificates'
-    },
-    {
         id: 'anime-quiz',
         name: 'Anime Quiz',
         departments: ['it', 'cs'],
@@ -842,7 +742,7 @@ export const events = [
     {
         id: 'fix-it-code',
         name: 'Fix-It Code',
-        department: 'cse',
+        department: 'aiml',
         category: 'hackathon',
         shortDescription: 'Debug and optimize code rapidly',
         description: 'A fast-paced coding challenge where participants must debug, fix, and optimize broken code snippets within a limited time. Test your debugging skills and efficiency.',
@@ -853,8 +753,6 @@ export const events = [
         coordinators: [],
         prizePool: 'Exciting Prizes + Certificate'
     },
-
-
     {
         id: 'cad-modeling',
         name: 'CAD Modeling',
@@ -914,7 +812,7 @@ export const events = [
     {
         id: 'poster-design',
         name: 'Poster Design',
-        department: 'it',
+        department: 'sss',
         category: 'non-technical',
         shortDescription: 'Creative Digital Art',
         description: 'Design a poster on a given theme using digital tools. Express your creativity and design thinking.',
@@ -929,7 +827,45 @@ export const events = [
     {
         id: 'technical-memes',
         name: 'Technical Memes',
+        department: 'it',
+        category: 'non-technical',
+        shortDescription: 'Humor meets Technology',
+        description: 'Create hilarious memes related to technology, coding, and engineering life.',
+        rules: ['Individual event', 'Original content only', 'No offensive content'],
+        eligibility: 'Open to all',
+        teamSize: 'Individual',
+        requirements: ['Mobile/Laptop', 'College ID'],
+        coordinators: [],
+        prizePool: 'Exciting Prizes + Certificate'
+    },
+    {
+        id: 'ai-idea-pitch',
+        name: 'AI Idea Pitch',
         department: 'aiml',
+        category: 'technical',
+        shortDescription: 'Pitch innovative AI-powered solutions',
+        description: 'AI Idea Pitch provides a platform for creative minds to propose innovative solutions using Artificial Intelligence. Participants must identify a real-world problem and present how AI can effectively solve it. This event emphasizes ideation, feasibility, business impact, and clarity of explanation rather than coding skills.',
+        rules: [
+            'Teams can have 1 to 4 participants',
+            'Presentation must be delivered using a PPT slide deck',
+            '5 minutes for presentation followed by 2 minutes of Q&A',
+            'The idea must be original and not copied from existing solutions',
+            'Prototype is optional but diagrams or mockups are encouraged'
+        ],
+        eligibility: 'Open to all students',
+        teamSize: '1-4',
+        requirements: [
+            'Laptop',
+            'Presentation slides (PPT)',
+            'College ID'
+        ],
+        coordinators: [],
+        prizePool: 'Cash Prize + Certificate'
+},
+    {
+        id: 'technical-memes',
+        name: 'Technical Memes',
+        department: 'cs',
         category: 'non-technical',
         shortDescription: 'Humor meets Technology',
         description: 'Create hilarious memes related to technology, coding, and engineering life.',
@@ -971,7 +907,7 @@ export const events = [
     {
         id: 'mr-king-ms-queen',
         name: 'Mr. King & Ms. Queen',
-        department: 'cse',
+        department: 'civil',
         category: 'non-technical',
         shortDescription: 'Personality Contest',
         description: 'Showcase your personality, talent, and confidence to win the title of Mr. King or Ms. Queen of FuturiX 2026.',
