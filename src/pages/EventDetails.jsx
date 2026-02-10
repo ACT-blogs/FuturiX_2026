@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Users, Trophy, CheckCircle2, AlertCircle, Phone, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Users, Trophy, CheckCircle2, AlertCircle, Phone, ExternalLink, Sparkles } from 'lucide-react';
 import { getEventById, getDepartmentById, getCategoryById } from '../data/eventsData';
 
 const EventDetails = () => {
@@ -59,6 +59,41 @@ const EventDetails = () => {
                             </div>
                             <h1 className="heading-md text-white mb-4">{event.name}</h1>
                             <p className="text-lg text-gray-300 leading-relaxed">{event.description}</p>
+
+
+                            {/* Themes Section - Premium Design */}
+                            {event.themes && event.themes.length > 0 && (
+                                <div className="mt-10 pt-8 border-t border-white/10">
+                                    <div className="flex items-center mb-6">
+                                        <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/20 to-blue-500/20 mr-3 border border-white/10">
+                                            <Sparkles className="w-5 h-5 text-purple-400" />
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-white">Event Themes</h2>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {event.themes.map((theme, index) => (
+                                            <motion.div
+                                                key={index}
+                                                whileHover={{ scale: 1.02, x: 5 }}
+                                                className="group relative overflow-hidden rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-all duration-300"
+                                            >
+                                                {/* Hover Gradient Background */}
+                                                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                                                <div className="relative p-4 flex items-center">
+                                                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg mr-4 group-hover:scale-110 transition-transform duration-300">
+                                                        {index + 1}
+                                                    </div>
+                                                    <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
+                                                        {theme}
+                                                    </span>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </motion.div>
 
                         <div className="glass p-8 rounded-2xl">
