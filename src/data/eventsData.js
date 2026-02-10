@@ -608,7 +608,7 @@ export const events = [
         coordinators: [],
         prizePool: 'Cash Prize + Certificate'
     },
-    
+
     {
         id: 'circuit-debugging-ece',
         name: 'Circuit Debugging',
@@ -853,8 +853,8 @@ export const events = [
         coordinators: [],
         prizePool: 'Exciting Prizes + Certificate'
     },
-    
-    
+
+
     {
         id: 'cad-modeling',
         name: 'CAD Modeling',
@@ -925,7 +925,7 @@ export const events = [
         coordinators: [],
         prizePool: 'Exciting Prizes + Certificate'
     },
-    
+
     {
         id: 'technical-memes',
         name: 'Technical Memes',
@@ -984,17 +984,18 @@ export const events = [
     },];
 
 // Utility functions
-export const getEventById = (id) => events.find(event => event.id === id);
+export const getEventById = (id) => events.find(event => event && event.id === id);
 export const getEventsByDepartment = (deptId) => events.filter(event => {
+    if (!event) return false;
     // Support both single department and multiple departments
     if (Array.isArray(event.departments)) {
         return event.departments.includes(deptId);
     }
     return event.department === deptId;
 });
-export const getEventsByCategory = (catId) => events.filter(event => event.category === catId);
+export const getEventsByCategory = (catId) => events.filter(event => event && event.category === catId);
 export const getEventsByFilter = (deptId = null, catId = null) => {
-    let filtered = events;
+    let filtered = events.filter(event => event); // Remove undefined/null first
     if (deptId && deptId !== 'all') {
         filtered = filtered.filter(event => {
             // Support both single department and multiple departments
@@ -1011,7 +1012,7 @@ export const getDepartmentById = (id) => departments.find(dept => dept.id === id
 export const getCategoryById = (id) => categories.find(cat => cat.id === id);
 export const getStats = () => ({
     departments: departments.length,
-    totalEvents: events.length,
-    technicalEvents: events.filter(e => e.category === 'technical').length,
+    totalEvents: events.filter(e => e).length,
+    technicalEvents: events.filter(e => e && e.category === 'technical').length,
     prizePool: '₹20,000+',
 });
