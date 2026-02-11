@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Clock, Navigation, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Phone, MapPin, Send, Clock, Navigation, Instagram, Linkedin, Youtube, CheckCircle2, X } from 'lucide-react';
 
 // Contact Form Component with mailto functionality
 const ContactForm = () => {
@@ -9,59 +9,119 @@ const ContactForm = () => {
         subject: '',
         message: ''
     });
+    const [showPopup, setShowPopup] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const mailtoLink = `mailto:futurix2026@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\n\n${formData.message}`)}`;
-        window.location.href = mailtoLink;
+        // Show popup first
+        setShowPopup(true);
+
+        // Delay mailto slightly to allow UI update
+        setTimeout(() => {
+            const mailtoLink = `mailto:futurix2026@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\n\n${formData.message}`)}`;
+            window.location.href = mailtoLink;
+            setFormData({ name: '', subject: '', message: '' });
+        }, 1000);
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-                <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
-                    Your Name
-                </label>
-                <input
-                    type="text"
-                    placeholder="John Doe"
-                    className="input w-full"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                />
-            </div>
-            <div>
-                <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
-                    Subject
-                </label>
-                <input
-                    type="text"
-                    placeholder="Inquiry about FuturiX 2026"
-                    className="input w-full"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    required
-                />
-            </div>
-            <div>
-                <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
-                    Message
-                </label>
-                <textarea
-                    placeholder="Tell us about your inquiry..."
-                    rows="5"
-                    className="input w-full resize-none"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    required
-                ></textarea>
-            </div>
-            <button type="submit" className="btn-primary w-full flex items-center justify-center space-x-2">
-                <Send className="w-5 h-5" />
-                <span>Send Message</span>
-            </button>
-        </form>
+        <>
+            <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                        Your Name
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="John Doe"
+                        className="input w-full"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                        Subject
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Inquiry about FuturiX 2026"
+                        className="input w-full"
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        required
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                        Message
+                    </label>
+                    <textarea
+                        placeholder="Tell us about your inquiry..."
+                        rows="5"
+                        className="input w-full resize-none"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit" className="btn-primary w-full flex items-center justify-center space-x-2">
+                    <Send className="w-5 h-5" />
+                    <span>Send Message</span>
+                </button>
+            </form>
+
+            {/* Professional Success Popup */}
+            <AnimatePresence>
+                {showPopup && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+                        onClick={() => setShowPopup(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                            className="bg-gray-900 border border-purple-500/30 p-8 rounded-2xl shadow-2xl max-w-sm w-full relative overflow-hidden"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Background Glow */}
+                            <div className="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                            <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                            <button
+                                onClick={() => setShowPopup(false)}
+                                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            <div className="text-center relative z-10">
+                                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-500/30">
+                                    <CheckCircle2 className="w-8 h-8 text-purple-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
+                                    Message Sent!
+                                </h3>
+                                <p className="text-gray-300 mb-6 font-light">
+                                    Thanks for reaching out! We've prepared your email client to send the message.
+                                </p>
+                                <button
+                                    onClick={() => setShowPopup(false)}
+                                    className="btn-primary w-full py-2 rounded-xl"
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 };
 

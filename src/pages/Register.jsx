@@ -4,7 +4,7 @@ import { ExternalLink, CheckCircle2, AlertCircle, Calendar, Trophy } from 'lucid
 const Register = () => {
     const guidelines = [
         'Registration is open to all undergraduate students from recognized institutions',
-        'Team registrations must include all team member details',
+        'For team events, each team member must fill the form separately',
         'Each participant can register for multiple events',
         'Online registration deadline: February 20, 2026',
         'Spot registration available on event day (February 21, 2026)',

@@ -62,25 +62,6 @@ const EventCard = ({ event }) => {
                         {event.name}
                     </h3>
 
-                    {/* Theme Pill - Below Event Name */}
-                    {event.theme && (
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="inline-block mb-4"
-                        >
-                            <div
-                                className="px-4 py-1.5 rounded-full text-xs font-semibold"
-                                style={{
-                                    background: themeGradient,
-                                    color: 'white',
-                                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
-                                }}
-                            >
-                                📄 {event.theme}
-                            </div>
-                        </motion.div>
-                    )}
 
                     {/* Description */}
                     <p className="mb-6 line-clamp-3 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
