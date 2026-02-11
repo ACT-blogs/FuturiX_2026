@@ -39,7 +39,7 @@ const Footer = () => {
                                 className="w-12 h-12 flex items-center justify-center"
                             >
                                 <img
-                                    src={`${import.meta.env.BASE_URL}logo.svg`}
+                                    src={`${import.meta.env.BASE_URL}logo_act.png`}
                                     alt="FuturiX Logo"
                                     className="w-full h-full object-contain drop-shadow-lg"
                                 />
