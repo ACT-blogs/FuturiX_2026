@@ -320,32 +320,34 @@ export const events = [
         coordinators: [],
         prizePool: 'Cash Prize + Certificate'
     },
-    {
-        id: 'tech-trek',
-        name: 'Tech Trek',
-        department: 'cse',
-        category: 'technical',
-        shortDescription: 'Technical treasure hunt with quizzes and challenges',
-        description: 'Tech Trek is an exciting technical treasure hunt where teams compete across multiple rounds involving quizzes, clue decoding, and checkpoint tasks. Teams earn points in every round, and winners are determined based on cumulative scores.',
-        rules: [
-            'The event consists of three rounds',
-            'Round 1: Tech Quiz – answer technical questions',
-            'Round 2: Clue Decode – solve technical clues and puzzles',
-            'Round 3: Treasure Trail – complete tasks at various checkpoints',
-            'Points are awarded in all rounds',
-            'Team with the highest total points will be declared the winner',
-            'Use of mobile phones or internet is not allowed',
-            'Teams must stay together throughout the event',
-            'Judges’ decision will be final'
-        ],
-        eligibility: 'Open to all students',
-        teamSize: '2-4',
-        requirements: [
-            'Strong teamwork and problem-solving skills',
-            'College ID'
-        ],
-        coordinators: [],
-        prizePool: 'Cash Prize + Certificate'
+{
+    id: 'tech-trek',
+    name: 'Tech Trek',
+    department: 'cse',
+    category: 'technical',
+    shortDescription: 'Think. Solve. Escape.',
+    description: 'Tech Trek is an immersive technical challenge that combines riddles, logical reasoning, coding concepts, and an exciting escape-style finale. Participants must think fast, solve accurately, and collaborate effectively to progress through multiple rounds and ultimately crack the final code.',
+    rules: [
+        'Participation is open to teams of 2 to 4 members',
+        'The event consists of multiple progressive rounds',
+        'Round 1: Tech Riddles / Brain Teasers – Short technical and logical riddles to test intuition and quick thinking',
+        'Round 2: Logic & Puzzle Challenge – Includes Algorithm Order Puzzle, Output Prediction, Flowchart Logic, and Pattern & Logical Reasoning tasks',
+        'Final Round: Tech Escape Room – Teams solve 5 mini-challenges, each revealing one digit or letter',
+        'All five digits or letters must be arranged correctly to form the final code',
+        'The first team to submit the correct final code will be declared the winner',
+        'Use of mobile phones or internet is strictly prohibited',
+        'Teams must work together throughout the event',
+        'Judges’ decision will be final and binding'
+    ],
+    eligibility: 'Open to all students',
+    teamSize: '2-4',
+    requirements: [
+        'Strong logical reasoning and problem-solving skills',
+        'Team coordination and quick thinking',
+        'College ID'
+    ],
+    coordinators: [],
+    prizePool: 'Cash Prize + Certificate'
     },
     {
         id: 'vibeathon',
