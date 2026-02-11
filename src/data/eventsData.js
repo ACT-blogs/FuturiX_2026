@@ -795,20 +795,6 @@ export const events = [
         prizePool: 'Exciting Prizes + Certificate'
     },
     {
-        id: 'tech-quiz',
-        name: 'Tech Quiz',
-        department: 'ece',
-        category: 'technical',
-        shortDescription: 'Test your technical knowledge',
-        description: 'A comprehensive quiz covering various technical domains including electronics, computing, and general technology trends.',
-        rules: ['Team of 2', 'Multiple rounds', 'Buzzer round included'],
-        eligibility: 'Open to all',
-        teamSize: '2',
-        requirements: ['College ID'],
-        coordinators: [],
-        prizePool: 'Exciting Prizes + Certificate'
-    },
-    {
         id: 'unbreakable-challenge',
         name: 'Unbreakable Challenge',
         department: 'civil',
