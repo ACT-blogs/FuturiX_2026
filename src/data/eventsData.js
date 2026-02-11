@@ -897,7 +897,7 @@ export const events = [
         id: 'poster-design',
         name: 'Poster Design',
         department: 'sss',
-        category: 'non-technical',
+        category: 'ttt',
         shortDescription: 'Creative Digital Art',
         description: 'Design a poster on a given theme using digital tools. Express your creativity and design thinking.',
         rules: ['Individual event', 'Software: Photoshop/Canva/etc', 'Theme on spot'],
@@ -911,45 +911,7 @@ export const events = [
     {
         id: 'technical-memes',
         name: 'Technical Memes',
-        department: 'it',
-        category: 'non-technical',
-        shortDescription: 'Humor meets Technology',
-        description: 'Create hilarious memes related to technology, coding, and engineering life.',
-        rules: ['Individual event', 'Original content only', 'No offensive content'],
-        eligibility: 'Open to all',
-        teamSize: 'Individual',
-        requirements: ['Mobile/Laptop', 'College ID'],
-        coordinators: [],
-        prizePool: 'Exciting Prizes + Certificate'
-    },
-    {
-        id: 'ai-idea-pitch',
-        name: 'AI Idea Pitch',
-        department: 'aiml',
-        category: 'technical',
-        shortDescription: 'Pitch innovative AI-powered solutions',
-        description: 'AI Idea Pitch provides a platform for creative minds to propose innovative solutions using Artificial Intelligence. Participants must identify a real-world problem and present how AI can effectively solve it. This event emphasizes ideation, feasibility, business impact, and clarity of explanation rather than coding skills.',
-        rules: [
-            'Teams can have 1 to 4 participants',
-            'Presentation must be delivered using a PPT slide deck',
-            '5 minutes for presentation followed by 2 minutes of Q&A',
-            'The idea must be original and not copied from existing solutions',
-            'Prototype is optional but diagrams or mockups are encouraged'
-        ],
-        eligibility: 'Open to all students',
-        teamSize: '1-4',
-        requirements: [
-            'Laptop',
-            'Presentation slides (PPT)',
-            'College ID'
-        ],
-        coordinators: [],
-        prizePool: 'Cash Prize + Certificate'
-    },
-    {
-        id: 'technical-memes-cs',
-        name: 'Technical Memes',
-        department: 'cs',
+        departments: ['it', 'cs'],
         category: 'non-technical',
         shortDescription: 'Humor meets Technology',
         description: 'Create hilarious memes related to technology, coding, and engineering life.',
