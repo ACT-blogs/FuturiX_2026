@@ -78,7 +78,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                     >
-                        <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Quick Links</h3>
+                        <h3 className="text-lg font-bold mb-6 font-tech" style={{ color: 'var(--text-primary)' }}>Quick Links</h3>
                         <ul className="space-y-3">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
@@ -101,7 +101,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Contact Us</h3>
+                        <h3 className="text-lg font-bold mb-6 font-tech" style={{ color: 'var(--text-primary)' }}>Contact Us</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start space-x-3">
                                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'var(--accent-primary)' }} />
@@ -109,9 +109,27 @@ const Footer = () => {
                                     Arjun College of Technology,<br />Thamaraikulam, Pollachi Highway,<br />Coimbatore - 642 120
                                 </span>
                             </li>
-                            <li className="flex items-center space-x-3">
-                                <Phone className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--accent-primary)' }} />
-                                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>+91 80984 21779</span>
+                            <li className="flex items-start space-x-3">
+                                <Phone className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: 'var(--accent-primary)' }} />
+                                <div className="flex flex-col text-sm w-full" style={{ color: 'var(--text-secondary)' }}>
+                                    <span className="font-semibold text-xs uppercase tracking-wide opacity-80 mb-3">Student Coordinators</span>
+
+                                    <div className="mb-3">
+                                        <span className="block text-sm font-medium text-white/90 mb-1">Jasvanth. S</span>
+                                        <a href="tel:+918098421779" className="inline-flex items-center text-xs opacity-70 hover:opacity-100 hover:text-[var(--accent-primary)] transition-colors">
+                                            <Phone size={12} className="mr-1.5" />
+                                            +91 80984 21779
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <span className="block text-sm font-medium text-white/90 mb-1">Santhoshkumar. K</span>
+                                        <a href="tel:+919176120750" className="inline-flex items-center text-xs opacity-70 hover:opacity-100 hover:text-[var(--accent-primary)] transition-colors">
+                                            <Phone size={12} className="mr-1.5" />
+                                            +91 91761 20750
+                                        </a>
+                                    </div>
+                                </div>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--accent-primary)' }} />
@@ -129,7 +147,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
                     >
-                        <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Important Dates</h3>
+                        <h3 className="text-lg font-bold mb-6 font-tech" style={{ color: 'var(--text-primary)' }}>Important Dates</h3>
                         <div className="space-y-4">
                             <div className="glass p-4 rounded-xl hover-lift">
                                 <p className="text-xs mb-1" style={{ color: 'var(--text-tertiary)' }}>Event Date</p>

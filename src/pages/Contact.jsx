@@ -180,13 +180,17 @@ const Contact = () => {
                             style={{ background: 'var(--accent-gradient)' }}>
                             <Phone className="w-7 h-7 text-white" />
                         </div>
-                        <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Call Us</h3>
-                        <p className="text-sm mb-2" style={{ color: 'var(--text-tertiary)' }}>Mon-Fri 9am-6pm</p>
-                        <a href="tel:+918098421779"
-                            className="font-medium hover:gradient-text transition-all"
-                            style={{ color: 'var(--accent-primary)' }}>
-                            +91 80984 21779
-                        </a>
+                        <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Student Coordinators</h3>
+                        <div className="flex flex-col gap-2 mt-4 text-sm">
+                            <a href="tel:+918098421779" className="flex flex-col items-center hover:opacity-80 transition-opacity">
+                                <span className="font-semibold" style={{ color: 'var(--text-secondary)' }}>Jasvanth. S</span>
+                                <span style={{ color: 'var(--accent-primary)' }}>+91 80984 21779</span>
+                            </a>
+                            <a href="tel:+919176120750" className="flex flex-col items-center hover:opacity-80 transition-opacity">
+                                <span className="font-semibold" style={{ color: 'var(--text-secondary)' }}>Santhoshkumar. K</span>
+                                <span style={{ color: 'var(--accent-primary)' }}>+91 91761 20750</span>
+                            </a>
+                        </div>
                     </motion.div>
 
                     <motion.div
@@ -324,20 +328,19 @@ const Contact = () => {
                     <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
                         Follow us on social media for the latest updates and announcements
                     </p>
-                    <div className="flex items-center justify-center gap-4">
+                    <div className="grid grid-cols-3 gap-3 md:flex md:justify-center md:gap-6 max-w-2xl mx-auto">
                         {/* Instagram */}
                         <motion.a
                             href="https://www.instagram.com/arjunct2013/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileHover={{ scale: 1.05, y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="glass-strong p-4 rounded-2xl hover-lift group"
-                            style={{ minWidth: '120px' }}
+                            className="glass-strong p-3 md:p-4 rounded-2xl hover-lift group flex flex-col items-center justify-center"
                         >
-                            <Instagram className="w-8 h-8 mx-auto mb-2 transition-colors"
+                            <Instagram className="w-6 h-6 md:w-8 md:h-8 mb-2 transition-colors"
                                 style={{ color: 'var(--accent-primary)' }} />
-                            <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                            <p className="text-xs md:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
                                 Instagram
                             </p>
                         </motion.a>
@@ -347,14 +350,13 @@ const Contact = () => {
                             href="https://www.linkedin.com/company/arjuncollegeoftechnology/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileHover={{ scale: 1.05, y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="glass-strong p-4 rounded-2xl hover-lift group"
-                            style={{ minWidth: '120px' }}
+                            className="glass-strong p-3 md:p-4 rounded-2xl hover-lift group flex flex-col items-center justify-center"
                         >
-                            <Linkedin className="w-8 h-8 mx-auto mb-2 transition-colors"
+                            <Linkedin className="w-6 h-6 md:w-8 md:h-8 mb-2 transition-colors"
                                 style={{ color: 'var(--accent-primary)' }} />
-                            <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                            <p className="text-xs md:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
                                 LinkedIn
                             </p>
                         </motion.a>
@@ -364,14 +366,13 @@ const Contact = () => {
                             href="https://www.youtube.com/@arjuncollegeoftechnologyco1739"
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileHover={{ scale: 1.05, y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="glass-strong p-4 rounded-2xl hover-lift group"
-                            style={{ minWidth: '120px' }}
+                            className="glass-strong p-3 md:p-4 rounded-2xl hover-lift group flex flex-col items-center justify-center"
                         >
-                            <Youtube className="w-8 h-8 mx-auto mb-2 transition-colors"
+                            <Youtube className="w-6 h-6 md:w-8 md:h-8 mb-2 transition-colors"
                                 style={{ color: 'var(--accent-primary)' }} />
-                            <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                            <p className="text-xs md:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
                                 YouTube
                             </p>
                         </motion.a>

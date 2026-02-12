@@ -7,28 +7,25 @@ export const departments = [
         icon: 'Code2',
         color: 'primary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Santhoshkumar. K', phone: '+91 91761 20750' },
         ]
     },
     {
         id: 'ai&ds',
-        name: 'AI & Data Science',
+        name: 'Artificial Intelligence & Data Science',
         icon: 'Brain',
         color: 'primary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Jasvanth. S', phone: '+91 80984 21779' },
         ]
     },
     {
         id: 'csbs',
-        name: 'CS & Business Systems',
+        name: 'Computer Science & Business Systems',
         icon: 'Database',
         color: 'secondary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Paintamil. V', phone: '+91 89252 56260' },
         ]
     },
     {
@@ -37,18 +34,16 @@ export const departments = [
         icon: 'Network',
         color: 'secondary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Suresh Krishna', phone: '+91 63827 57434' },
         ]
     },
     {
         id: 'aiml',
-        name: 'AI & Machine Learning',
+        name: 'Artificial Intelligence & Machine Learning',
         icon: 'Layout',
         color: 'secondary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Ponmuneeswaran. P', phone: '+91 93604 41259' },
         ]
     },
     {
@@ -57,18 +52,16 @@ export const departments = [
         icon: 'Shield',
         color: 'primary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Santhosh. S', phone: '+91 84387 15983' },
         ]
     },
     {
         id: 'ece',
-        name: 'Electronics & Communication',
+        name: 'Electronics & Communication Engineering',
         icon: 'Cpu',
         color: 'primary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Surya. R', phone: '+91 94879 81947' },
         ]
     },
     {
@@ -77,8 +70,7 @@ export const departments = [
         icon: 'Cog',
         color: 'primary',
         coordinators: [
-            { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
+            { name: 'Prasanth. S', phone: '+91 63698 70322' },
         ]
     },
     {
@@ -88,7 +80,6 @@ export const departments = [
         color: 'secondary',
         coordinators: [
             { name: 'Student Name', phone: '+91 98765 43210' },
-            { name: 'Student Name', phone: '+91 98765 43210' }
         ]
     }
 ];
@@ -275,9 +266,12 @@ export const events = [
         ],
         rules: [
             'Individual or Team of 4',
-            '5-7 minutes presentation',
-            '3 minutes Q&A session',
+            '8-10 minutes presentation',
+            'Topic must be relevant to the theme',
+            'Paper must include Title, Abstract, Introduction, Content, Conclusion, References',
             'PPT/PDF format required',
+            'Participant must report 30-mins before the event',
+            'Juries’ decision is final'
         ],
         eligibility: 'Open to all',
         teamSize: '1-4',
@@ -609,7 +603,7 @@ export const events = [
         description: 'The Technical Quiz is designed to assess participants’ knowledge of core mechanical engineering subjects. Conducted across multiple rounds, the quiz challenges accuracy, speed, and conceptual understanding.',
         rules: [
             'Participation is limited to teams of two members',
-            'The quiz will be conducted in multiple rounds',
+            'The quiz will be conducted in 2 rounds',
             'Each question will have a fixed time limit',
             'Use of electronic devices is strictly prohibited unless specified',
             'No discussion is allowed between teams during the quiz',
@@ -617,7 +611,7 @@ export const events = [
             'Quiz master’s decision will be final'
         ],
         eligibility: 'Open to Mechanical Engineering students',
-        teamSize: '2',
+        teamSize: '1-2',
         requirements: [
             'Basic knowledge of mechanical engineering subjects',
             'Awareness of quiz rules and format',
@@ -855,10 +849,16 @@ export const events = [
         department: 'mech',
         category: 'technical',
         shortDescription: '3D Design & Modeling Challenge',
-        description: 'Showcase your design skills by creating precise 3D models using CAD software based on given specifications.',
-        rules: ['Participation can be individual or a team', 'Software provided', 'Time limit: 2 hours', 'Judged on accuracy & efficiency'],
+        description: 'Showcase your design skills by creating precise 2D/3D models using CREO/SolidWorks based on given specifications.',
+        rules: [
+            'Participation must be individual', 
+            'Question will provided during the event',
+            'Score/Points will be given based on the accuracy, neatness and time taken',
+            'Time limit 30 minutes', 
+            'Judged on accuracy & efficiency'
+        ],
         eligibility: 'Open to Mechanical/Civil/Auto',
-        teamSize: '1-2',
+        teamSize: 'Individual',
         requirements: ['College ID'],
         coordinators: [],
         prizePool: 'Exciting Prizes + Certificate'

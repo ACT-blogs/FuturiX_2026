@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Code2, Network, Cpu, Cog, Building2, Brain, Shield, Database, Layout, ArrowRight, Sparkles } from 'lucide-react';
+import { Code2, Network, Cpu, Cog, Building2, Brain, Shield, Database, Layout, ArrowRight, Sparkles, Phone, User } from 'lucide-react';
 import { departments } from '../data/eventsData';
 
 const Departments = () => {
@@ -57,16 +57,18 @@ const Departments = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
+                                className="h-full"
                             >
-                                <Link to={`/events?dept=${encodeURIComponent(dept.id)}`}>
-                                    <motion.div
-                                        whileHover={{ y: -8, scale: 1.02 }}
-                                        className="card-hover h-full group relative overflow-hidden"
-                                    >
-                                        {/* Gradient Background Effect */}
-                                        <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                                            style={{ background: 'var(--accent-gradient)' }} />
+                                <motion.div
+                                    whileHover={{ y: -8, scale: 1.02 }}
+                                    className="card h-full group relative overflow-hidden flex flex-col p-0"
+                                >
+                                    {/* Gradient Background Effect */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
+                                        style={{ background: 'var(--accent-gradient)' }} />
 
+                                    {/* Main Content Details Link */}
+                                    <Link to={`/events?dept=${encodeURIComponent(dept.id)}`} className="flex-1 p-6 relative z-10">
                                         {/* Icon */}
                                         <motion.div
                                             whileHover={{ rotate: 360, scale: 1.1 }}
@@ -86,7 +88,7 @@ const Departments = () => {
                                             <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                                                 {dept.description || `Explore innovative events and competitions in ${dept.name}`}
                                             </p>
-                                            
+
                                             {/* View Events Link */}
                                             <div className="flex items-center space-x-2 font-medium group-hover:translate-x-2 transition-transform"
                                                 style={{ color: 'var(--accent-primary)' }}>
@@ -94,12 +96,40 @@ const Departments = () => {
                                                 <ArrowRight className="w-5 h-5" />
                                             </div>
                                         </div>
+                                    </Link>
 
-                                        {/* Decorative Element */}
-                                        <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"
-                                            style={{ background: 'var(--accent-gradient)' }} />
-                                    </motion.div>
-                                </Link>
+                                    {/* Student Coordinators Section */}
+                                    {dept.coordinators && dept.coordinators.length > 0 && (
+                                        <div className="relative z-10 px-6 py-4 border-t border-white/5 bg-white/5 backdrop-blur-sm">
+                                            <div className="flex items-center gap-2 mb-3">
+                                                <User size={16} className="text-purple-400" />
+                                                <h4 className="text-sm font-semibold tracking-wide uppercase" style={{ color: 'var(--text-secondary)' }}>
+                                                    Student Coordinators
+                                                </h4>
+                                            </div>
+                                            <div className="grid grid-cols-1 gap-2">
+                                                {dept.coordinators.map((coord, idx) => (
+                                                    <div key={idx} className="flex items-center justify-between group/coord">
+                                                        <span className="text-sm font-medium text-white/90">{coord.name}</span>
+                                                        <a
+                                                            href={`tel:${coord.phone}`}
+                                                            className="flex items-center gap-2 text-xs py-1 px-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors border border-white/5 hover:border-white/20"
+                                                            style={{ color: 'var(--accent-primary)' }}
+                                                            onClick={(e) => e.stopPropagation()}
+                                                        >
+                                                            <Phone size={12} />
+                                                            <span>{coord.phone}</span>
+                                                        </a>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Decorative Element */}
+                                    <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full opacity-20 group-hover:opacity-30 transition-opacity pointer-events-none"
+                                        style={{ background: 'var(--accent-gradient)' }} />
+                                </motion.div>
                             </motion.div>
                         );
                     })}

@@ -38,7 +38,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
-                            className="relative px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-300"
+                            className="relative px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-300 font-tech tracking-wider"
                             style={{
                                 color: location.pathname === link.path ? 'white' : 'var(--text-secondary)'
                             }}

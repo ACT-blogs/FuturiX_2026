@@ -10,6 +10,7 @@ import EventDetails from './pages/EventDetails';
 import Departments from './pages/Departments';
 import Contact from './pages/Contact';
 import Register from './pages/Register';
+import CustomCursor from './components/CustomCursor';
 
 // ScrollToTop component
 const ScrollToTop = () => {
@@ -24,6 +25,9 @@ function App() {
     return (
         <ThemeProvider>
             <Router basename={import.meta.env.BASE_URL}>
+                <div className="hidden md:block">
+                    <CustomCursor />
+                </div>
                 <ScrollToTop />
                 <div className="min-h-screen animated-bg scrollbar-custom" style={{ backgroundColor: 'var(--bg-primary)' }}>
                     <Navbar />
