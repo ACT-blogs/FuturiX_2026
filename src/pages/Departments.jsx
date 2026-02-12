@@ -86,7 +86,7 @@ const Departments = () => {
                                             <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                                                 {dept.description || `Explore innovative events and competitions in ${dept.name}`}
                                             </p>
-
+                                            
                                             {/* View Events Link */}
                                             <div className="flex items-center space-x-2 font-medium group-hover:translate-x-2 transition-transform"
                                                 style={{ color: 'var(--accent-primary)' }}>

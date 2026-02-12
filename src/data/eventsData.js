@@ -1,15 +1,96 @@
 import { Code2, Network, Cpu, Zap, Cog, Building2, Brain, Shield, Database, Layout } from 'lucide-react';
 
 export const departments = [
-    { id: 'cse', name: 'Computer Science & Engineering', icon: 'Code2', color: 'primary' },
-    { id: 'ai&ds', name: 'AI & Data Science', icon: 'Brain', color: 'primary' },
-    { id: 'csbs', name: 'CS & Business Systems', icon: 'Database', color: 'secondary' },
-    { id: 'it', name: 'Information Technology', icon: 'Network', color: 'secondary' },
-    { id: 'aiml', name: 'AI & Machine Learning', icon: 'Layout', color: 'secondary' },
-    { id: 'cs', name: 'Cyber Security', icon: 'Shield', color: 'primary' },
-    { id: 'ece', name: 'Electronics & Communication', icon: 'Cpu', color: 'primary' },
-    { id: 'mech', name: 'Mechanical Engineering', icon: 'Cog', color: 'primary' },
-    { id: 'civil', name: 'Civil Engineering', icon: 'Building2', color: 'secondary' }
+    {
+        id: 'cse',
+        name: 'Computer Science & Engineering',
+        icon: 'Code2',
+        color: 'primary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'ai&ds',
+        name: 'AI & Data Science',
+        icon: 'Brain',
+        color: 'primary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'csbs',
+        name: 'CS & Business Systems',
+        icon: 'Database',
+        color: 'secondary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'it',
+        name: 'Information Technology',
+        icon: 'Network',
+        color: 'secondary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'aiml',
+        name: 'AI & Machine Learning',
+        icon: 'Layout',
+        color: 'secondary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'cs',
+        name: 'Cyber Security',
+        icon: 'Shield',
+        color: 'primary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'ece',
+        name: 'Electronics & Communication',
+        icon: 'Cpu',
+        color: 'primary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'mech',
+        name: 'Mechanical Engineering',
+        icon: 'Cog',
+        color: 'primary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    },
+    {
+        id: 'civil',
+        name: 'Civil Engineering',
+        icon: 'Building2',
+        color: 'secondary',
+        coordinators: [
+            { name: 'Student Name', phone: '+91 98765 43210' },
+            { name: 'Student Name', phone: '+91 98765 43210' }
+        ]
+    }
 ];
 
 export const categories = [
@@ -108,7 +189,7 @@ export const events = [
         ],
         eligibility: 'Open to all',
         teamSize: '1-4',
-        requirements: [ 'Presentation slides', 'College ID'],
+        requirements: ['Presentation slides', 'College ID'],
         coordinators: [],
         prizePool: 'Cash + Certificate',
     },
@@ -129,7 +210,7 @@ export const events = [
             "Multimodal AI Systems",
             "Machine Learning for Cybersecurity",
             "Responsible AI and Model Governance"
-         ],
+        ],
         rules: [
             'Individual or Team of 4',
             '5-7 minutes presentation',
@@ -138,7 +219,7 @@ export const events = [
         ],
         eligibility: 'Open to all',
         teamSize: '1-4',
-        requirements: [ 'Presentation slides', 'College ID'],
+        requirements: ['Presentation slides', 'College ID'],
         coordinators: [],
         prizePool: 'Cash + Certificate',
     },
@@ -314,40 +395,39 @@ export const events = [
         teamSize: '1-2',
         requirements: [
             'Basic programming knowledge',
-            'Laptop',
             'College ID'
         ],
         coordinators: [],
         prizePool: 'Cash Prize + Certificate'
     },
-{
-    id: 'tech-trek',
-    name: 'Tech Trek',
-    department: 'cse',
-    category: 'technical',
-    shortDescription: 'Think. Solve. Escape.',
-    description: 'Tech Trek is an immersive technical challenge that combines riddles, logical reasoning, coding concepts, and an exciting escape-style finale. Participants must think fast, solve accurately, and collaborate effectively to progress through multiple rounds and ultimately crack the final code.',
-    rules: [
-        'Participation is open to teams of 2 to 4 members',
-        'The event consists of multiple progressive rounds',
-        'Round 1: Tech Riddles / Brain Teasers – Short technical and logical riddles to test intuition and quick thinking',
-        'Round 2: Logic & Puzzle Challenge – Includes Algorithm Order Puzzle, Output Prediction, Flowchart Logic, and Pattern & Logical Reasoning tasks',
-        'Final Round: Tech Escape Room – Teams solve 5 mini-challenges, each revealing one digit or letter',
-        'All five digits or letters must be arranged correctly to form the final code',
-        'The first team to submit the correct final code will be declared the winner',
-        'Use of mobile phones or internet is strictly prohibited',
-        'Teams must work together throughout the event',
-        'Judges’ decision will be final and binding'
-    ],
-    eligibility: 'Open to all students',
-    teamSize: '2-4',
-    requirements: [
-        'Strong logical reasoning and problem-solving skills',
-        'Team coordination and quick thinking',
-        'College ID'
-    ],
-    coordinators: [],
-    prizePool: 'Cash Prize + Certificate'
+    {
+        id: 'tech-trek',
+        name: 'Tech Trek',
+        department: 'cse',
+        category: 'technical',
+        shortDescription: 'Think. Solve. Escape.',
+        description: 'Tech Trek is an immersive technical challenge that combines riddles, logical reasoning, coding concepts, and an exciting escape-style finale. Participants must think fast, solve accurately, and collaborate effectively to progress through multiple rounds and ultimately crack the final code.',
+        rules: [
+            'Participation is open to teams of 2 to 4 members',
+            'The event consists of multiple progressive rounds',
+            'Round 1: Tech Riddles / Brain Teasers – Short technical and logical riddles to test intuition and quick thinking',
+            'Round 2: Logic & Puzzle Challenge – Includes Algorithm Order Puzzle, Output Prediction, Flowchart Logic, and Pattern & Logical Reasoning tasks',
+            'Final Round: Tech Escape Room – Teams solve 5 mini-challenges, each revealing one digit or letter',
+            'All five digits or letters must be arranged correctly to form the final code',
+            'The first team to submit the correct final code will be declared the winner',
+            'Use of mobile phones or internet is strictly prohibited',
+            'Teams must work together throughout the event',
+            'Judges’ decision will be final and binding'
+        ],
+        eligibility: 'Open to all students',
+        teamSize: '2-4',
+        requirements: [
+            'Strong logical reasoning and problem-solving skills',
+            'Team coordination and quick thinking',
+            'College ID'
+        ],
+        coordinators: [],
+        prizePool: 'Cash Prize + Certificate'
     },
     {
         id: 'vibeathon',
@@ -594,7 +674,6 @@ export const events = [
         eligibility: 'Open to all students',
         teamSize: '1-2',
         requirements: [
-            'Smartphone or laptop',
             'Basic creativity and quick thinking',
             'College ID'
         ],
@@ -624,7 +703,7 @@ export const events = [
         coordinators: [],
         prizePool: 'Certificate of Appreciation'
     },
-   {
+    {
         id: 'fun-collage',
         name: 'Fun Collage',
         department: 'ai&ds',
@@ -653,19 +732,21 @@ export const events = [
         name: 'Poster Making',
         department: 'aiml',
         category: 'non-technical',
-        shortDescription: 'Express ideas through visual creativity',
-        description: 'Poster Making is a creative competition that focuses on visual storytelling. Participants are required to design an original poster based on a theme announced on the spot. The event evaluates creativity, clarity of message, and artistic expression.',
+        shortDescription: 'Design. Create. Communicate.',
+        description: 'Poster Making is a digital creative competition focused on visual storytelling and design skills. Participants must create an original poster using a laptop or mobile device with any poster design software. The theme will be announced on the spot. The event evaluates creativity, clarity of message, visual appeal, and overall design impact.',
         rules: [
             'Individual participation only',
             'Theme will be announced at the start of the event',
-            'Participants must bring their own drawing and coloring materials',
-            'College will provide drawing sheets',
-            'Tracing or using pre-designed templates is strictly prohibited'
+            'Poster must be designed digitally using a laptop or mobile',
+            'Participants may use any poster design software (Canva, Photoshop, etc.)',
+            'Internet usage is allowed only for design resources',
+            'Judges’ decision will be final'
         ],
         eligibility: 'Open to all students',
         teamSize: 'Individual',
         requirements: [
-            'Art supplies (pencils, colors, brushes)',
+            'Laptop or Mobile with poster design software',
+            'Basic design skills',
             'College ID'
         ],
         coordinators: [],
@@ -757,9 +838,9 @@ export const events = [
         shortDescription: 'Debug and optimize code rapidly',
         description: 'A fast-paced coding challenge where participants must debug, fix, and optimize broken code snippets within a limited time. Test your debugging skills and efficiency.',
         rules: [
-            'Individual or Team participation', 
-            'No IDE assistance', 
-            'Time-based scoring', 
+            'Individual or Team participation',
+            'No IDE assistance',
+            'Time-based scoring',
             'Standard compilers used'
         ],
         eligibility: 'Open to all',
@@ -810,21 +891,6 @@ export const events = [
         coordinators: [],
         prizePool: 'Exciting Prizes + Certificate'
     },
-    {
-        id: 'poster-design',
-        name: 'Poster Design',
-        department: 'sss',
-        category: 'ttt',
-        shortDescription: 'Creative Digital Art',
-        description: 'Design a poster on a given theme using digital tools. Express your creativity and design thinking.',
-        rules: ['Participation can be individual or a team', 'Software: Photoshop/Canva/etc', 'Theme on spot'],
-        eligibility: 'Open to all',
-        teamSize: '1-2',
-        requirements: ['Laptop', 'College ID'],
-        coordinators: [],
-        prizePool: 'Exciting Prizes + Certificate'
-    },
-
     {
         id: 'technical-memes',
         name: 'Technical Memes',
